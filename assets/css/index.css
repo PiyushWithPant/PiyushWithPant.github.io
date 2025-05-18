@@ -16,10 +16,14 @@ html, body {
   }
 
   .footer-style{
+
+    
     background-color: #171724 !important;
     .transparent{
         color:rgb(152, 152, 152);
     }
+
+    
   }
 
   .btn-style{
@@ -130,3 +134,6 @@ html, body {
     100% { transform: translateX(0) }
    }
   
+   footer {
+    display: block !important;
+  }

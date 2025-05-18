@@ -61,6 +61,47 @@ main {
 }
 
 
+/* FOR THE PAGE */
 
 
+.heading{
+  color:#171724;
+}
+
+.year{
+  color:inherit;
+}
+
+.paper{
+
+  background-color: #D1B2FF !important;
+  margin-bottom: 20px !important;
+  border: none;
+  
+}
+
+
+.research-img-div{
+  img{
+  height: 100%;
+  overflow: hidden;
+  }
+}
+
+.paper-title{
+    color:inherit;
+}
+
+.research-venue{
+  color:inherit;
+}
+
+.research-links{
+  a{
+    margin-right: 10px;
+  }
+
+
+  
+}
 
