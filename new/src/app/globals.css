@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-dark: #171724;
+  --brand-lilac: #D1B2FF;
+  --brand-cyan: rgb(0, 151, 151);
+}
+
+body {
+  background-color: var(--brand-dark);
+  color: white;
+}
+
+/* Custom button style from your index.css */
+.btn-style {
+  @apply border-[3px] border-[var(--brand-cyan)] text-[var(--brand-cyan)] px-5 py-2 
+         text-xl transition-all duration-300 hover:shadow-[2px_2px_8px_white] hover:scale-105;
+  font-family: "MV Boli", cursive; /* Fallback to cursive if not available */
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
+}
+
+/* Scrolled text animation */
+.scrolling-text {
+  @apply whitespace-nowrap overflow-hidden border-r-2 border-cyan-400;
+  animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
