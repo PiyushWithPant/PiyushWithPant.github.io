@@ -26,3 +26,28 @@ MyWebpage/
 ├── next.config.ts       # Configured for GitHub Pages
 └── tailwind.config.ts   # Custom colors & Glassmorphism themes
 ```
+
+
+### Usage Guide
+
+
+#### 0. Starter Pack
+
+1. Install `NodeJS` & `npm`
+
+2. Install the following packages as below -
+
+```
+# This creates "package.json"
+npm init -y
+
+# This installs the "Core 3" requirements for Next.js
+npm install next@latest react@latest react-dom@latest
+
+# This installs UI requirements
+npm install framer-motion lucide-react clsx tailwind-merge
+
+# This installs Development tools required
+npm install -D typescript @types/node @types/react @types/react-dom postcss autoprefixer tailwindcss
+```
+
