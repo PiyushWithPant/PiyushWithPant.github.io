@@ -1,35 +1,41 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
 @import "tailwindcss";
 
-:root {
-  --brand-dark: #171724;
-  --brand-lilac: #D1B2FF;
-  --brand-cyan: rgb(0, 151, 151);
+@theme {
+  /* Updated to match your starfield background exactly */
+  --color-brand-dark: #0f0f16; 
+  --color-brand-cyan: #009797;
 }
 
-body {
-  background-color: var(--brand-dark);
-  color: white;
+@layer base {
+  body {
+    /* Now the entire body of every page will be this black by default */
+    @apply bg-brand-dark text-white antialiased selection:bg-brand-cyan/30;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
 }
 
-/* Custom button style from your index.css */
-.btn-style {
-  @apply border-[3px] border-[var(--brand-cyan)] text-[var(--brand-cyan)] px-5 py-2 
-         text-xl transition-all duration-300 hover:shadow-[2px_2px_8px_white] hover:scale-105;
-  font-family: "MV Boli", cursive; /* Fallback to cursive if not available */
+.ellipse-shape {
+  border-radius: 50%;
+  aspect-ratio: 3 / 4; 
+  @apply object-cover shadow-2xl;
 }
 
-.glass-card {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
-}
-
-/* Scrolled text animation */
+/* Updated for Responsiveness */
 .scrolling-text {
-  @apply whitespace-nowrap overflow-hidden border-r-2 border-cyan-400;
-  animation: typing 3.5s steps(40, end);
+  @apply border-brand-cyan text-white font-bold;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Desktop: Keep your existing typing animation */
+  @media (min-width: 768px) {
+    @apply whitespace-nowrap overflow-hidden border-r-2;
+    animation: typing 3.5s steps(40, end);
+  }
+
+  /* Mobile: Allow text to wrap and remove animation to prevent vanishing */
+  @media (max-width: 767px) {
+    @apply whitespace-normal border-none text-center;
+    width: auto !important;
+  }
 }
 
 @keyframes typing {
@@ -37,18 +43,73 @@ body {
   to { width: 100% }
 }
 
+.btn-style {
+  @apply border-4 border-brand-cyan text-brand-cyan px-8 py-3 rounded-xl 
+         transition-all duration-300 font-mono text-base tracking-widest cursor-pointer font-bold;
+}
 
-/* Custom Scrollbar for a futuristic feel */
-::-webkit-scrollbar {
-  width: 8px;
+.btn-style:hover {
+  @apply bg-white border-white text-black shadow-[0_0_25px_rgba(255,255,255,0.4)];
 }
-::-webkit-scrollbar-track {
-  background: #171724;
+
+/* Clean White Glow Logic for ICONS */
+.social-icon-wrapper a {
+  @apply text-[#b5b5b5] transition-all duration-300;
 }
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 10px;
+
+.social-icon-wrapper a:hover {
+  @apply text-white scale-110;
+  filter: drop-shadow(0 0 10px white) !important;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--brand-cyan);
+
+
+
+/* Glassmorphism Card */
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl shadow-2xl;
+}
+
+/* Rounded Sidebar Image to match the Namaste vibe */
+.sidebar-img {
+  @apply rounded-2xl border-2 border-brand-cyan/30 object-cover shadow-lg;
+}
+
+
+
+
+
+
+
+
+
+/* --- Original Warp Speed / Starfield Background --- */
+
+.star-container {
+  /* Changed from bg-[#0f0f16] to var(--color-brand-dark) for consistency */
+  @apply fixed inset-0 -z-20 bg-brand-dark overflow-hidden;
+  perspective: 600px;
+}
+.star-layer {
+  @apply absolute inset-0;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, var(--color-brand-cyan), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 50px 160px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 130px 80px, var(--color-brand-cyan), rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: warpMove var(--speed) linear infinite;
+  opacity: var(--opacity);
+  /* The original tilting logic */
+  transform: rotateX(calc(var(--mouse-y) * 0.02deg)) rotateY(calc(var(--mouse-x) * 0.02deg));
+}
+
+@keyframes warpMove {
+  from { transform: translateZ(0px) translateY(0); }
+  to { transform: translateZ(600px) translateY(100px); }
+}
+
+.warp-glow {
+  @apply absolute inset-0 z-0 pointer-events-none;
+  background: radial-gradient(circle at center, transparent 30%, #0f0f16 90%);
 }
