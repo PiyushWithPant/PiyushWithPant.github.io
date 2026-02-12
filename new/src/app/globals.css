@@ -1,6 +1,8 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
+
+@import "tailwindcss";
 
 :root {
   --brand-dark: #171724;
@@ -33,4 +35,20 @@ body {
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
+}
+
+
+/* Custom Scrollbar for a futuristic feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #171724;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-cyan);
 }

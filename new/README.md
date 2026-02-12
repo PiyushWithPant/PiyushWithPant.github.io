@@ -51,3 +51,23 @@ npm install framer-motion lucide-react clsx tailwind-merge
 npm install -D typescript @types/node @types/react @types/react-dom postcss autoprefixer tailwindcss
 ```
 
+#### Dev Run Application
+
+1. Ensure you have these in your `package.json`
+```
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+```
+
+2. Execute the below command
+
+```
+npm run dev
+```
+
+This will run the application at `http://localhost:3000/` (Check terminal once to confirm PORT)

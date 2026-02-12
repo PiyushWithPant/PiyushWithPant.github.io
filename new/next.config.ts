@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  output: 'export', // Required for GitHub Pages
-  images: {
-    unoptimized: true, // Required for static export
-  },
-  // basePath: '/your-repo-name', // Uncomment this if not using a custom domain
+// next.config.ts
+const nextConfig = {
+  output: 'export',
+  // Replace 'my-portfolio' with your actual repository name
+  basePath: process.env.NODE_ENV === 'production' ? '' : '',
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
