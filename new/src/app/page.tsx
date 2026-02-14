@@ -2,24 +2,62 @@
 import { motion, Variants } from "framer-motion";
 import Starfield from "@/components/Starfield";
 import Link from "next/link";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaGraduationCap } from "react-icons/fa";
 import { SiOrcid } from "react-icons/si";
 
+const GREETINGS = [
+  { hello: "Namaste 🙏", intro: "I am Piyush Pant" }, 
+  { hello: "नमस्ते 🇮🇳", intro: "मैं पियुष पंत हूँ" }, 
+  { hello: "Hallo 🇩🇪", intro: "Ich bin Piyush Pant" }, 
+  { hello: "こんにちは 🇯🇵", intro: "ピーユッシュです" }, 
+  { hello: "Привет 🇷🇺", intro: "Я Пиюш Пант" }, 
+  { hello: "Bonjour 🇫🇷", intro: "Je suis Piyush Pant" }, 
+  { hello: "नमस्ते 🇳🇵", intro: "म पियुष पन्त हुँ" }, 
+  { hello: "Γεια σας 🇬🇷", intro: "Είμαι ο Piyush Pant" }, 
+  { hello: "你好 🇨🇳", intro: "我是皮尤什" }, 
+  { hello: "Hola 🇪🇸", intro: "Soy Piyush Pant" }, 
+  { hello: "Ciao 🇮🇹", intro: "Sono Piyush Pant" }, 
+  { hello: "안녕하세요 🇰🇷", intro: "저는 피유시 판트입니다" }, 
+  { hello: "Olà 🇵🇹", intro: "Eu sou Piyush Pant" }, 
+  { hello: "ನಮಸ್ಕಾರ 🇮🇳", intro: "ನಾನು ಪಿಯೂಷ್ ಪಂತ್" }, 
+  { hello: "வணக்கம் 🇮🇳", intro: "நான் பியೂஷ் பந்த்" }, 
+  { hello: "Sveiki 🇱🇻", intro: "Es esmu Piyush Pant" }, 
+  { hello: "مرحباً 🇦🇪", intro: "أنا بيوش بانت" }, 
+];
+
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState(0);
+  const [isInterfering, setIsInterfering] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // 1. Trigger the interference animation on the text
+      setIsInterfering(true);
+
+      // 2. Precisely 200ms in (peak of jitter), swap the text
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % GREETINGS.length);
+      }, 200);
+
+      // 3. Stop the interference state so it can re-trigger next time
+      setTimeout(() => {
+        setIsInterfering(false);
+      }, 600);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
-      // Calculate tilt (mapping mouse pos to -50 to 50)
       const x = (e.clientX - window.innerWidth / 2) / 10;
       const y = (e.clientY - window.innerHeight / 2) / 10;
-      
       containerRef.current.style.setProperty("--mouse-x", `${x}`);
       containerRef.current.style.setProperty("--mouse-y", `${y}`);
     };
-  
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
@@ -46,7 +84,7 @@ export default function Home() {
     <div ref={containerRef} className="relative flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-8 overflow-hidden">
       
       <Starfield />
-  
+    
       <motion.div 
         variants={containerVars}
         initial="initial"
@@ -63,16 +101,25 @@ export default function Home() {
           </motion.div>
 
           <div className="text-center md:text-left z-10">
-            <motion.h2 variants={itemVars} className="text-4xl md:text-5xl font-bold mb-1 text-gray-200">
-              Namaste 🙏
-            </motion.h2>
-            
-            <motion.h1 variants={itemVars} className="text-4xl md:text-6xl font-black mb-6 text-white leading-tight">
-              I am Piyush Pant
-            </motion.h1>
+            {/* Wrap only the text you want to interfere */}
+            <div className={`transition-all duration-300 ${isInterfering ? 'text-interference language-sweep' : ''}`}>
+              <motion.h2 
+                variants={itemVars} 
+                className="text-4xl md:text-5xl font-bold mb-1 text-gray-200 hover-glow-effect cursor-default whitespace-nowrap"
+              >
+                {GREETINGS[index].hello}
+              </motion.h2>
+
+              <motion.h1 
+                variants={itemVars} 
+                className="text-4xl md:text-6xl font-black mb-6 text-white leading-tight hover-glow-effect cursor-default whitespace-nowrap"
+              >
+                {GREETINGS[index].intro}
+              </motion.h1>
+            </div>
 
             <motion.div variants={itemVars} className="mb-12">
-              <p className="scrolling-text text-xl md:text-xl">
+              <p className="scrolling-text text-xl md:text-xl data-stream-hover cursor-default">
                 AI Researcher • Developer • Martial Artist
               </p>
             </motion.div>
