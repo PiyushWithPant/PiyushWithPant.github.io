@@ -1,17 +1,26 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
-import { MapPin, School, Building, Mail, Github, GraduationCap } from "lucide-react";
-import Starfield from "@/components/Starfield"; // Ensure this component exists from previous step
+import React, { useEffect, useRef, useState } from 'react';
+import { FaMapMarkerAlt, FaUniversity, FaBuilding, FaEnvelope, FaGithub } from "react-icons/fa";
+import { Shield, Zap, Target } from "lucide-react"; 
+import Starfield from "@/components/Starfield";
 
 export default function AboutPage() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [viewCount, setViewCount] = useState(0);
 
-  // Re-using your tilt logic for consistency
+  // Visitor Counter Logic (Simulated or via LocalStorage/API)
+  useEffect(() => {
+    const count = localStorage.getItem("page_views") || "1248";
+    const newCount = parseInt(count) + 1;
+    localStorage.setItem("page_views", newCount.toString());
+    setViewCount(newCount);
+  }, []);
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
-      const x = (e.clientX - window.innerWidth / 2) / 10;
-      const y = (e.clientY - window.innerHeight / 2) / 10;
+      const x = (e.clientX - window.innerWidth / 2) / 20;
+      const y = (e.clientY - window.innerHeight / 2) / 20;
       containerRef.current.style.setProperty("--mouse-x", `${x}`);
       containerRef.current.style.setProperty("--mouse-y", `${y}`);
     };
@@ -20,82 +29,69 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative min-h-screen w-full overflow-hidden selection:bg-brand-cyan/30">
-      {/* Background Animation */}
+    <div ref={containerRef} className="relative min-h-screen w-full overflow-x-hidden selection:bg-white/20">
       <Starfield />
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div className="container mx-auto px-6 pt-40 pb-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
-          {/* Left Column - Sidebar */}
+          {/* Sidebar */}
           <div className="lg:col-span-4 xl:col-span-3">
-            <div className="glass-card p-8 sticky top-12">
-              <img
-                src="/img1.jpg"
-                alt="Piyush Pant"
-                className="w-full aspect-[3/4] sidebar-img mb-6"
-              />
-              <h2 className="text-3xl font-black text-white mb-1">Piyush Pant</h2>
-              <p className="text-brand-cyan font-mono text-sm mb-8 tracking-tighter">AI Researcher // Developer</p>
+            <div className="sticky top-40 flex flex-col items-center lg:items-start space-y-8">
               
-              <div className="space-y-5">
-                 <SidebarItem icon={<MapPin size={18}/>} text="Saarbrücken, Germany" link="https://g.co/kgs/VJt4AyM" />
-                 <SidebarItem icon={<School size={18}/>} text="Saarland University" link="https://www.uni-saarland.de" />
-                 <SidebarItem icon={<Building size={18}/>} text="CISPA Helmholtz Center" link="https://cispa.de" />
-                 <SidebarItem icon={<Mail size={18}/>} text="piyushpant15@gmail.com" link="mailto:piyushpant15@gmail.com" />
-                 <SidebarItem icon={<Github size={18}/>} text="PiyushWithPant" link="https://github.com/PiyushWithPant" />
+              <div className="relative group">
+                <img
+                  src="/img1.jpg"
+                  alt="Piyush Pant"
+                  className="w-64 md:w-72 ellipse-shape border-2 border-white/10 group-hover:border-white/40 transition-all duration-700 shadow-2xl"
+                />
               </div>
 
-              <div className="mt-10 pt-6 border-t border-white/10">
-                <p className="text-yellow-200/80 italic text-xs leading-relaxed font-serif">
-                  "A true warrior doesn’t seek to dominate, but to discipline his own spirit..."
-                </p>
+              <div className="space-y-6 text-center lg:text-left w-full">
+                <div>
+                  <h2 className="text-4xl font-black text-white tracking-tighter">Piyush Pant</h2>
+                  <p className="text-white font-mono text-xs mt-1 tracking-[0.3em] uppercase opacity-60">AI Researcher // DE</p>
+                </div>
+                
+                <div className="space-y-4 inline-block lg:block">
+                   <SidebarMetadata icon={<FaMapMarkerAlt />} text="Saarbrücken, Germany" />
+                   <SidebarMetadata icon={<FaUniversity />} text="Saarland University" />
+                   <SidebarMetadata icon={<FaBuilding />} text="CISPA Helmholtz Center" />
+                   <SidebarLink icon={<FaEnvelope />} text="Email Me" link="mailto:piyushpant15@gmail.com" />
+                   <SidebarLink icon={<FaGithub />} text="GitHub Profile" link="https://github.com/PiyushWithPant" />
+                </div>
+
+                
               </div>
             </div>
           </div>
 
-          {/* Right Column - Main Content */}
-          <div className="lg:col-span-8 xl:col-span-9 space-y-8">
-            {/* Bio Section */}
-            <section className="glass-card p-8 md:p-12">
-              <h2 className="text-3xl font-bold mb-8 text-white flex items-center gap-3">
-                <span className="text-brand-cyan">01.</span> Who I Am
-              </h2>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                I come from a small Himalayan village nestled near the <span className="text-white font-semibold underline decoration-brand-cyan underline-offset-4">Panchachuli peaks</span>. 
-                My journey is defined by a leap of faith—leaving my roots to expand my technical horizons in Europe.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-brand-cyan/50 transition-colors">
-                  <h3 className="text-brand-cyan font-bold mb-2 flex items-center gap-2">
-                    <GraduationCap size={20}/> Education
-                  </h3>
-                  <p className="text-sm text-gray-300">M.Sc. Computer Science at Universität des Saarlandes</p>
-                </div>
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-brand-cyan/50 transition-colors">
-                  <h3 className="text-brand-cyan font-bold mb-2 flex items-center gap-2">
-                    <Building size={18}/> Current Research
-                  </h3>
-                  <p className="text-sm text-gray-300">Master's Thesis under Prof. Dr. Xiao Zhang at CISPA</p>
-                </div>
+          {/* Main Content */}
+          <div className="lg:col-span-8 xl:col-span-9 space-y-10">
+            <section className="obsidian-card p-10">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-[2px] w-8 bg-white shadow-[0_0_10px_#fff]"></div>
+                <h3 className="text-white font-mono text-xs tracking-[0.4em] uppercase opacity-70">System.Identity</h3>
               </div>
+              <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">Computational Journey</h2>
+              <p className="text-gray-400 text-lg leading-relaxed">
+                Hailing from the Himalayas near the <span className="text-white font-semibold italic">Panchachuli peaks</span>, 
+                I explore the boundaries of <span className="text-white font-medium">Trustworthy AI</span>. 
+                My research focuses on ensuring Large Language Models remain robust against adversarial exploitation while maintaining ethical alignment.
+              </p>
             </section>
 
-            {/* Research Grid Section */}
-            <section className="glass-card p-8 md:p-12">
-              <h2 className="text-3xl font-bold mb-8 text-white flex items-center gap-3">
-                <span className="text-brand-cyan">02.</span> Research Focus
-              </h2>
-              <p className="text-gray-300 mb-8">I am deeply passionate about advancing AI in a safe, ethical, and impactful direction:</p>
-              
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {['Adversarial ML', 'LLM Alignment', 'Trustworthy AI', 'RL & Vision'].map((tag) => (
-                  <div key={tag} className="bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan px-4 py-3 rounded-xl text-center text-xs font-bold uppercase tracking-widest hover:bg-brand-cyan hover:text-white transition-all duration-300">
-                    {tag}
-                  </div>
-                ))}
-              </div>
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ObsidianNode 
+                icon={<Shield className="text-white" size={24} />} 
+                title="Adversarial ML" 
+                desc="Securing neural architectures against malicious perturbation." 
+              />
+              <ObsidianNode 
+                icon={<Zap className="text-white" size={24} />} 
+                title="LLM Alignment" 
+                desc="Mathematically directing generative agents toward safety." 
+              />
             </section>
           </div>
         </div>
@@ -104,11 +100,30 @@ export default function AboutPage() {
   );
 }
 
-function SidebarItem({ icon, text, link }: { icon: React.ReactNode, text: string, link: string }) {
+function SidebarMetadata({ icon, text }: { icon: React.ReactNode, text: string }) {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-400 hover:text-brand-cyan transition-all duration-300 group">
-      <span className="text-white group-hover:text-brand-cyan transform group-hover:scale-110 transition-transform">{icon}</span>
-      <span className="text-sm font-medium">{text}</span>
+    <div className="flex items-center gap-4 text-gray-500 hover:text-white transition-all duration-300 py-1 cursor-default group">
+      <span className="text-white/40 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all">{icon}</span>
+      <span className="text-sm font-medium tracking-tight group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all">{text}</span>
+    </div>
+  );
+}
+
+function SidebarLink({ icon, text, link }: { icon: React.ReactNode, text: string, link: string }) {
+  return (
+    <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-400 hover:text-white transition-all duration-300 group py-1 no-underline">
+      <span className="text-white/40 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all">{icon}</span>
+      <span className="text-sm font-medium no-underline group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] transition-all">{text}</span>
     </a>
+  );
+}
+
+function ObsidianNode({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
+  return (
+    <div className="obsidian-card p-8 group transition-all duration-500 hover:bg-white/5">
+      <div className="mb-4 opacity-50 group-hover:opacity-100 group-hover:drop-shadow-[0_0_8px_white] transition-all">{icon}</div>
+      <h4 className="text-white font-bold text-lg mb-2">{title}</h4>
+      <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">{desc}</p>
+    </div>
   );
 }

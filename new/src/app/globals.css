@@ -3,7 +3,7 @@
 @theme {
   /* Updated to match your starfield background exactly */
   --color-brand-dark: #0f0f16; 
-  --color-brand-cyan: #009797;
+  --color-brand-cyan: #00FFFF;
 }
 
 @layer base {
@@ -245,4 +245,66 @@
     -webkit-text-fill-color: inherit;
     text-shadow: none;
   }
+}
+
+
+
+/*! --------------------------- ABOUT PAGE --------------------------- */
+
+/* --- Seamless Layout Overrides --- */
+
+/* Removed the footer line and ensured total transparency */
+nav, header, footer {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+footer {
+  @apply py-12;
+  border-top: none !important; /* This removes the line you hated */
+}
+
+/* --- Obsidian Card - Pure Stealth Version --- */
+
+.obsidian-card {
+  @apply relative rounded-2xl overflow-hidden;
+  /* Shifted from greenish-cyan to pure Obsidian Black/White */
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.6) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(15px);
+}
+
+.obsidian-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Update Navbar Links - Remove the greenish hover */
+.nav-link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* If you have a specific "Active" link color in your Nav, set it here */
+.nav-link-active {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff;
+}
+
+/* --- Global Polish --- */
+
+/* Ensures links in the sidebar never have underlines */
+.no-underline, a {
+  text-decoration: none !important;
+}
+
+/* Divine Glow for white elements */
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Updated Sidebar Icon Glow to match Landing Page */
+.group:hover span svg {
+  filter: drop-shadow(0 0 10px white) !important;
 }
