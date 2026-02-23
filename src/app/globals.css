@@ -1,0 +1,874 @@
+@import "tailwindcss";
+
+@theme {
+  /* Updated to match your starfield background exactly */
+  --color-brand-dark: #0f0f16; 
+  --color-brand-cyan: #00FFFF;
+}
+
+@layer base {
+  body {
+    /* Now the entire body of every page will be this black by default */
+    @apply bg-brand-dark text-white antialiased selection:bg-brand-cyan/30;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.ellipse-shape {
+  border-radius: 50%;
+  aspect-ratio: 3 / 4; 
+  @apply object-cover shadow-2xl;
+}
+
+/* Updated for Responsiveness */
+/* --- FIXED TYPING LOGIC --- */
+.scrolling-text {
+  @apply border-brand-cyan text-white font-bold;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  @media (min-width: 768px) {
+    @apply whitespace-nowrap overflow-hidden border-r-2;
+    /* 1. We start at width 0 */
+    width: 0; 
+    /* 2. We run the animation ONCE and use 'forwards' to lock it at 100% */
+    animation: typing 3.5s steps(40, end) forwards;
+  }
+
+  @media (max-width: 767px) {
+    @apply whitespace-normal border-none text-center;
+    width: auto !important;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  /* 3. Ensure the end state is exactly what you want it to stay at */
+  to { width: 100%; border-color: transparent; } 
+}
+
+/* Ensure the hover doesn't conflict with width */
+.data-stream-hover:hover {
+  -webkit-text-fill-color: transparent;
+  animation: scanData 2s linear infinite;
+  /* Add this to ensure width stays locked during hover */
+  width: 100% !important; 
+  filter: drop-shadow(0 0 8px rgba(0, 151, 151, 0.5));
+}
+
+.btn-style {
+  @apply border-4 border-brand-cyan text-brand-cyan px-8 py-3 rounded-xl 
+         transition-all duration-300 font-mono text-base tracking-widest cursor-pointer font-bold;
+}
+
+.btn-style:hover {
+  @apply bg-white border-white text-black shadow-[0_0_25px_rgba(255,255,255,0.4)];
+}
+
+/* Clean White Glow Logic for ICONS */
+.social-icon-wrapper a {
+  @apply text-[#b5b5b5] transition-all duration-300;
+}
+
+.social-icon-wrapper a:hover {
+  @apply text-white scale-110;
+  filter: drop-shadow(0 0 10px white) !important;
+}
+
+
+
+/* Glassmorphism Card */
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl shadow-2xl;
+}
+
+/* Rounded Sidebar Image to match the Namaste vibe */
+.sidebar-img {
+  @apply rounded-2xl border-2 border-brand-cyan/30 object-cover shadow-lg;
+}
+
+
+
+
+
+
+
+
+
+/* --- Original Warp Speed / Starfield Background --- */
+
+.star-container {
+  /* Changed from bg-[#0f0f16] to var(--color-brand-dark) for consistency */
+  @apply fixed inset-0 -z-20 bg-brand-dark overflow-hidden;
+  perspective: 600px;
+}
+.star-layer {
+  @apply absolute inset-0;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, var(--color-brand-cyan), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 50px 160px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 130px 80px, var(--color-brand-cyan), rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: warpMove var(--speed) linear infinite;
+  opacity: var(--opacity);
+  /* The original tilting logic */
+  transform: rotateX(calc(var(--mouse-y) * 0.02deg)) rotateY(calc(var(--mouse-x) * 0.02deg));
+}
+
+@keyframes warpMove {
+  from { transform: translateZ(0px) translateY(0); }
+  to { transform: translateZ(600px) translateY(100px); }
+}
+
+.warp-glow {
+  @apply absolute inset-0 z-0 pointer-events-none;
+  background: radial-gradient(circle at center, transparent 30%, #0f0f16 90%);
+}
+
+
+
+/* --- High-Intensity Data Sweep --- */
+.data-stream-hover {
+  @apply transition-all duration-300 cursor-crosshair;
+  background: linear-gradient(
+    90deg, 
+    #ffffff 0%, 
+    var(--color-brand-cyan) 25%, 
+    #ffffff 50%, 
+    var(--color-brand-cyan) 75%, 
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.data-stream-hover:hover {
+  /* This makes the text color come from the background gradient instead of solid white */
+  -webkit-text-fill-color: transparent;
+  animation: scanData 2s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 151, 151, 0.5));
+}
+
+@keyframes scanData {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+
+
+/* --- Seamless Universal Translator Sweep --- */
+.language-sweep {
+  position: relative;
+  /* Single concentrated white beam */
+  background: linear-gradient(
+    90deg, 
+    rgba(255,255,255,1) 0%, 
+    rgba(255,255,255,1) 30%, 
+    rgba(255,255,255,0) 50%, 
+    rgba(255,255,255,1) 70%, 
+    rgba(255,255,255,1) 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sweepAndFade 1s ease-in-out forwards;
+}
+
+@keyframes sweepAndFade {
+  0% { 
+    background-position: 150% 0;
+    opacity: 1;
+  }
+  50% { 
+    background-position: 50% 0;
+    opacity: 0.2; /* Dims text exactly when swapping */
+  }
+  100% { 
+    background-position: -50% 0;
+    opacity: 1;
+  }
+}
+
+/* --- Your Original Hover Idea (Restore) --- */
+.hover-glow-effect:hover {
+  /* Stop the sweep/fade immediately on hover */
+  -webkit-text-fill-color: #fff !important;
+  color: #fff !important;
+  text-shadow: 0 0 15px var(--color-brand-cyan), 0 0 30px var(--color-brand-cyan);
+  animation: glitch-shiver 0.2s infinite linear;
+}
+
+@keyframes glitch-shiver {
+  0% { transform: translate(0); }
+  25% { transform: translate(-1.5px, 1.5px); }
+  50% { transform: translate(1.5px, -1.5px); }
+  75% { transform: translate(-1.5px, -1.5px); }
+  100% { transform: translate(0); }
+}
+
+
+
+
+
+/* --- Master Signal Interference (Brand Matched) --- */
+.text-interference {
+  position: relative;
+  /* High priority animation for the 0.6s swap window */
+  animation: master-glitch 0.6s ease-in-out forwards !important;
+}
+
+@keyframes master-glitch {
+  0% { 
+    transform: translate(0); 
+    filter: brightness(1);
+    -webkit-text-fill-color: inherit;
+  }
+  15% { 
+    transform: translate(-3px, 1px); 
+    /* Cyan and White "ghosting" instead of red */
+    text-shadow: 2px 0 var(--color-brand-cyan), -2px 0 rgba(255, 255, 255, 0.5);
+    filter: brightness(1.3);
+  }
+  30% { 
+    transform: translate(3px, -1px); 
+    text-shadow: -2px 0 var(--color-brand-cyan), 2px 0 #fff;
+    filter: contrast(1.2);
+  }
+  /* Peak: White flash + Text swap */
+  50% { 
+    transform: scale(1.02);
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(2) drop-shadow(0 0 10px var(--color-brand-cyan));
+  }
+  85% {
+    transform: translate(1px, 1px);
+    text-shadow: 1px 0 var(--color-brand-cyan);
+  }
+  100% { 
+    transform: translate(0); 
+    filter: brightness(1);
+    -webkit-text-fill-color: inherit;
+    text-shadow: none;
+  }
+}
+
+
+
+/*!  --------------------------- TIMELINE ---------------------------  */
+/* --- High-Fidelity Planetary Evolution & Minimalist Glow --- */
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Biometric Pulse - subtle breathing effect for planets not being hovered */
+@keyframes planet-pulse {
+  0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.02); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.08); }
+  100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.02); }
+}
+
+.planet-body {
+  animation: planet-pulse 4s ease-in-out infinite;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Sudden "Pop" Evolution */
+}
+
+.animate-spin-slow {
+  animation: orbit-spin 15s linear infinite;
+}
+
+/* Faster spin for the "Ignition" state */
+@keyframes spin-fast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.group:hover .group-hover\:animate-spin-fast {
+  animation: spin-fast 4s linear infinite; /* Faster than the 15s default */
+}
+
+/* Add a "Corona" effect to the planet on hover */
+.planet-body::after {
+  content: "";
+  @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-500;
+  background: radial-gradient(circle at center, transparent 40%, white 100%);
+}
+
+.group:hover .planet-body::after {
+  @apply opacity-20;
+}
+
+/* REDUCED GLOW: Tight and professional */
+.group:hover time, 
+.group:hover h4 {
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.3), 
+    0 0 8px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease-in-out;
+  @apply opacity-100;
+}
+
+/* PROFILE IMAGE: Floating effect */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.ellipse-shape {
+  border-radius: 50% !important;
+  animation: float 6s ease-in-out infinite;
+  @apply object-cover shadow-xl transition-all duration-700 border-2 border-white/10;
+  filter: none !important;
+}
+
+.group:hover .ellipse-shape {
+  @apply border-white/20;
+}
+
+
+
+
+
+
+/*! --------------------------- ABOUT PAGE --------------------------- */
+
+/* Dynamic Navbar: Transparent at top, visible on scroll */
+nav, header {
+  transition: all 0.4s ease-in-out !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid transparent !important;
+}
+
+/* Add this class via JS or use the window scroll check below */
+.nav-scrolled {
+  background-color: rgba(15, 15, 22, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- Section Icon Animations --- */
+@keyframes continuous-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-icon {
+  @apply transition-all duration-500;
+}
+
+.group:hover .rotate-icon {
+  animation: continuous-rotate 4s linear infinite;
+  @apply text-white;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* --- Typography & Layout --- */
+.ellipse-shape {
+  border-radius: 50% !important;
+  aspect-ratio: 3 / 4 !important;
+  @apply object-cover shadow-2xl transition-all duration-700 border border-white/10;
+}
+
+.main-text-highlight {
+  @apply text-gray-200 text-2xl font-light leading-relaxed transition-colors duration-500;
+}
+
+.group:hover .main-text-highlight {
+  @apply text-white;
+}
+
+.tagline-text {
+  @apply text-brand-cyan font-bold tracking-[0.1em] whitespace-nowrap opacity-90;
+}
+
+/* Utilizing full screen width */
+.max-w-ultra {
+  max-width: 95%;
+}
+
+a, .no-underline { text-decoration: none !important; }
+
+
+
+
+
+
+/*! --------------------------- RESEARCH PAGE --------------------------- */
+
+/* Infinite Header Rotation */
+@keyframes section-icon-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.group\/section:hover .section-header-icon svg {
+  animation: section-icon-spin 6s linear infinite;
+  filter: drop-shadow(0 0 15px currentColor);
+}
+
+.section-header-icon {
+  transition: all 0.5s ease-in-out;
+}
+
+.group\/section:hover .section-header-icon {
+  @apply border-white/40 bg-white/10;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Interest Card Glow */
+.interest-card {
+  @apply relative bg-white/[0.02] border border-white/5 p-8 rounded-3xl transition-all duration-500;
+}
+
+.interest-card:hover {
+  @apply border-cyan-400/30 bg-white/[0.04] -translate-y-2;
+  box-shadow: 0 10px 40px -20px rgba(0, 255, 255, 0.3);
+}
+
+/* Publication Card (Stationary Glow) */
+.pub-card-v2 {
+  @apply flex flex-col md:flex-row bg-white/[0.01] rounded-3xl overflow-hidden 
+         transition-all duration-700 border border-white/5 backdrop-blur-sm relative;
+}
+
+.pub-card-v2:hover {
+  @apply bg-white/[0.03] border-white/20;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.pub-card-v2 img {
+  @apply w-full h-full object-cover block;
+}
+
+/* --- INVERSION ACTION BUTTONS --- */
+.pub-action-btn {
+  @apply flex items-center gap-3 px-5 py-2.5 rounded-xl border no-underline 
+         text-[11px] font-black uppercase tracking-[0.15em] transition-all duration-300
+         bg-transparent relative overflow-hidden;
+  
+  /* Initial State: Color border and text */
+  border-color: var(--accent-color, #22d3ee);
+  color: var(--accent-color, #22d3ee);
+}
+
+.pub-action-btn:hover {
+  /* Hover State: Solid White BG, Black Text */
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.3),
+    0 10px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Polished Glint sweep on hover */
+.pub-action-btn::after {
+  content: "";
+  @apply absolute inset-0 translate-x-[-150%] transition-transform duration-500 ease-in-out;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+  z-index: 1;
+}
+
+.pub-action-btn:hover::after {
+  @apply translate-x-[150%];
+}
+
+.pub-action-btn span, 
+.pub-action-btn svg {
+  @apply relative z-10;
+}
+
+/* Spin for Interest Icons */
+@keyframes infinite-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.interest-card:hover .rotate-icon-research {
+  animation: infinite-spin 3s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+/*! --------------------------- PROJECTS PAGE --------------------------- */
+
+.project-card {
+  @apply flex flex-col bg-white/[0.01] rounded-3xl overflow-hidden 
+         transition-all duration-700 border border-white/5 backdrop-blur-sm relative;
+}
+
+.project-card:hover {
+  @apply bg-white/[0.03] border-white/20;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.project-placeholder {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Engineering Project Buttons */
+.project-btn {
+  @apply flex items-center justify-center gap-3 px-6 py-2.5 rounded-xl border no-underline 
+         text-[11px] font-black uppercase tracking-[0.15em] transition-all duration-300
+         bg-transparent flex-1;
+  
+  border-color: var(--project-accent);
+  color: var(--project-accent);
+}
+
+.project-btn:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.project-btn svg {
+  @apply transition-transform duration-300;
+}
+
+.project-btn:hover svg {
+  @apply scale-110;
+}
+
+/* Continuous Rotation for Project Header Icon */
+.section-header-icon svg {
+  animation: section-icon-spin 10s linear infinite !important;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+}
+
+/* Optional: Make it spin faster on hover to feel interactive */
+.group\/section:hover .section-header-icon svg {
+  animation-duration: 3s !important;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6));
+}
+
+
+
+
+
+
+
+/*! --------------------------- BLOG PAGE --------------------------- */
+
+.blog-card {
+  @apply flex flex-col bg-white/[0.01] rounded-3xl overflow-hidden 
+         transition-all duration-700 border border-white/5 backdrop-blur-sm relative no-underline;
+}
+
+.blog-card:hover {
+  @apply bg-white/[0.03] border-white/20;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Dynamic Mesh Gradient Header */
+.blog-gradient-bg {
+  background: radial-gradient(at top left, var(--blog-accent), transparent),
+              radial-gradient(at bottom right, #171724, transparent),
+              linear-gradient(to bottom right, #0a0a0a, #171724);
+  filter: saturate(1.2) brightness(0.8);
+}
+
+.blog-card:hover .blog-gradient-bg {
+    filter: saturate(1.5) brightness(1);
+}
+
+/* Blog "Read Entry" Button - Hollow to White Inversion */
+.blog-read-btn {
+  @apply flex items-center justify-between px-6 py-3 rounded-xl border no-underline 
+         text-[11px] font-black uppercase tracking-[0.15em] transition-all duration-500
+         bg-transparent w-full;
+  
+  border-color: var(--blog-accent);
+  color: var(--blog-accent);
+}
+
+.blog-card:hover .blog-read-btn {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Continuous spin for the Pen icon in header */
+.section-header-icon svg {
+    animation: section-icon-spin 12s linear infinite;
+}
+
+
+
+
+/*! --------------------------- RESUME PAGE --------------------------- */
+
+/* CV Access Card (Stationary) */
+.cv-access-card {
+  @apply bg-white/[0.02] border border-white/5 p-12 md:p-16 rounded-[2.5rem] 
+         transition-all duration-700 backdrop-blur-md max-w-2xl w-full flex flex-col items-center;
+}
+
+.cv-access-card:hover {
+  @apply border-brand-cyan/30 bg-white/[0.04];
+  box-shadow: 0 0 80px rgba(0, 240, 255, 0.05);
+}
+
+/* CV Download Button (Hollow to White Inversion) */
+.cv-download-btn {
+  @apply flex items-center justify-center gap-4 px-10 py-4 rounded-2xl border no-underline 
+         text-[12px] font-black uppercase tracking-[0.2em] transition-all duration-500
+         bg-transparent w-full max-w-sm;
+  
+  border-color: #00F0FF; /* brand-cyan */
+  color: #00F0FF;
+}
+
+.cv-download-btn:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Infinite spin for the Header Icon */
+.section-header-icon svg {
+    animation: section-icon-spin 10s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+}
+
+
+
+
+
+
+/*! --------------------------- CONTACT PAGE --------------------------- */
+
+.contact-info-card {
+  @apply flex items-center gap-6 p-6 rounded-2xl border border-white/5 
+         bg-white/[0.02] transition-all duration-500 no-underline;
+}
+
+.contact-info-card:hover {
+  @apply border-brand-cyan/30 bg-white/[0.05];
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.05);
+}
+
+.contact-form-container {
+  @apply p-10 bg-white/[0.02] border border-white/5 rounded-[2.5rem] backdrop-blur-md;
+}
+
+.contact-input {
+  @apply w-full bg-white/[0.03] border border-white/10 rounded-xl px-12 py-4
+         text-white text-sm font-medium transition-all duration-300 outline-none;
+}
+
+.contact-input:focus {
+  @apply border-brand-cyan/50 bg-white/[0.05];
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+}
+
+.contact-submit-btn {
+  @apply flex items-center justify-between gap-4 px-10 py-4 rounded-xl border no-underline 
+         text-[12px] font-black uppercase tracking-[0.2em] transition-all duration-500
+         bg-transparent w-full cursor-pointer;
+  
+  border-color: #00F0FF;
+  color: #00F0FF;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  @apply bg-white text-black border-white;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.contact-submit-btn:disabled {
+  @apply opacity-50 cursor-not-allowed border-gray-600 text-gray-600;
+}
+
+/* Infinite rotation for the Message icon */
+.section-header-icon svg {
+    animation: section-icon-spin 10s linear infinite;
+}
+
+
+
+/*! --------------------------- SEARCH PAGE--------------------------- */
+
+
+.search-result-item {
+  @apply flex items-center justify-between p-6 bg-white/[0.02] border border-white/5 
+         rounded-2xl transition-all duration-300 no-underline;
+}
+
+.search-result-item:hover {
+  @apply bg-white/[0.05] border-white/10 -translate-y-1;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+/*! --------------------------- Custom Scrollbar Styling --------------------------- */
+
+
+.fire-ember {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(2px);
+  box-shadow: 0 0 10px #00f0ff;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Creating turbulent, organic motion for the fire */
+@keyframes ignite {
+  0% { 
+    transform: translate3d(-50%, 20px, 0) scale(1); 
+    opacity: 0.9; 
+  }
+  25% { transform: translate3d(-100%, -30px, 0) scale(1.2); }
+  50% { transform: translate3d(50%, -60px, 0) scale(0.8); }
+  75% { transform: translate3d(-20%, -90px, 0) scale(0.5); }
+  100% { 
+    transform: translate3d(0, -120px, 0) scale(0); 
+    opacity: 0; 
+  }
+}
+
+.e1 { animation: ignite 0.8s infinite ease-in; left: 10%; }
+.e2 { animation: ignite 1.2s infinite ease-out; animation-delay: 0.2s; left: 40%; }
+.e3 { animation: ignite 1s infinite linear; animation-delay: 0.5s; left: 70%; }
+.e4 { animation: ignite 1.5s infinite ease-in-out; animation-delay: 0.7s; left: 30%; }
+
+/* Ensure the body scrollbar is fully killed */
+html {
+  scrollbar-width: none !important;
+}
+body::-webkit-scrollbar {
+  display: none !important;
+}
+
+
+
+
+
+
+
+
+/*! ---------------------------  Custom CURSOR --------------------------- */
+/* src/app/globals.css */
+
+html, body, a, button {
+  cursor: none !important;
+}
+
+/* 1. The Flicker Effect: Rapid, slightly erratic movement and scaling */
+@keyframes flicker-flame {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.8;
+  }
+  20% { 
+    transform: scale(1.2, 0.9) rotate(5deg); 
+    opacity: 1;
+  }
+  40% { 
+    transform: scale(0.9, 1.1) rotate(-5deg); 
+    border-radius: 40% 40% 60% 60% / 50% 50% 50% 50%;
+    opacity: 0.7;
+  }
+  60% { 
+    transform: scale(1.1, 1) rotate(3deg); 
+    opacity: 0.9;
+  }
+  80% { 
+    transform: scale(0.95, 1.05) rotate(-3deg); 
+    opacity: 0.8;
+  }
+}
+
+.animate-flicker-flame {
+  animation: flicker-flame 0.2s infinite; /* Very fast for high-energy flicker */
+}
+
+/* 2. Core Pulse: Deep breathing of the fire */
+@keyframes core-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.15); filter: brightness(1.3); }
+}
+
+.animate-core-pulse {
+  animation: core-pulse 1.5s ease-in-out infinite;
+}
+
+/* 3. Sprinkle Trail (Same Cyan) */
+@keyframes stardust-fade {
+  0% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0); opacity: 0; filter: blur(3px); }
+}
+
+.animate-stardust {
+  animation: stardust-fade 0.7s forwards ease-out;
+}
+
+
+
+/* --- NAV LINK PLASMA EFFECT --- */
+
+.nav-link-hover {
+  position: relative;
+  overflow: visible;
+}
+
+/* The Animated Underline */
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff, 0 0 5px #00f0ff;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-50%);
+}
+
+.nav-link-hover:hover::after {
+  width: 100%;
+}
+
+/* Text Glow on Hover */
+.nav-link-hover:hover {
+  color: #fff !important;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+}
+
+/* Active State (Current Page) */
+.nav-link-active::after {
+  width: 40% !important; /* Keep a small line under the active page */
+  background: #00f0ff;
+}

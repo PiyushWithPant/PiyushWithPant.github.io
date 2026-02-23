@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piyush Pant | My Webpage</title>
+
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; img-src 'self' data:;"
+    /> -->
+
+    <meta
+      name="description"
+      content="Personal website of Piyush Pant – AI Researcher, Developer, Martial Artist."
+    />
+    <meta
+      name="keywords"
+      content="Piyush Pant, AI, Researcher, Developer, Portfolio"
+    />
+    <meta name="author" content="Piyush Pant" />
+
+    <meta name="language" content="EN" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" type="image/ico" href="assets/img/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom Styles (optional) -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <main
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="row align-items-center">
+        <!-- Profile Image Block -->
+        <div
+          class="col-md-5 text-center mb-4 mb-md-0 animate__animated animate__bounceIn animate__delay-2s"
+        >
+          <img
+            src="assets/img/img1.jpg"
+            class="img-fluid rounded-circle shadow myimage"
+            alt="Piyush Pant photo"
+            width="300"
+          />
+        </div>
+
+        <!-- Welcome Text Block -->
+
+        <div class="col-12 col-md-7 text-white text-center text-md-start px-3">
+          <h1
+            class="display-4 fw-bold animate__animated animate__bounceIn animate__delay-1s"
+          >
+            Namaste 🙏
+          </h1>
+
+          <h1
+            class="display-4 fw-bold text-nowrap animate__animated animate__bounceIn animate__delay-2s"
+          >
+            I am Piyush Pant
+          </h1>
+
+          <div
+            class="moving-text text-nowrap animate__animated animate__bounceIn animate__delay-3s"
+          >
+            <div class="scrolling-text lead text-center">
+              AI Researcher &ensp; • &ensp; Part-time Developer &ensp; • &ensp;
+              Martial Artist
+            </div>
+          </div>
+
+          <a
+            href="about.html"
+            class="btn btn-outline-light mt-5 btn-style animate__animated animate__bounceIn animate__delay-4s"
+            >from ME import ⭐️</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <div class="container d-flex flex-wrap justify-content-center gap-3 mb-4">
+      <a
+        rel="noopener noreferrer"
+        href="https://github.com/PiyushWithPant"
+        title="GitHub | Piyush Pant"
+        target="_blank"
+        class="text-white my-2 fs-4 mx-2 ghi"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+      <a
+        href="https://scholar.google.com/citations?user=I3-AR5MAAAAJ&hl=en"
+        title="Google Scholar | Piyush Pant"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="text-white my-2 fs-4 mx-2 gsi"
+      >
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+      <a
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/piyush-pant/"
+        title="LinkedIn | Piyush Pant"
+        target="_blank"
+        class="text-white my-2 fs-4 mx-2 lki"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a
+        rel="noopener noreferrer"
+        href="https://wa.me/919145728659"
+        title="Whatsapp | Piyush Pant"
+        target="_blank"
+        class="text-white my-2 fs-4 mx-2 wai"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        rel="noopener noreferrer"
+        href="https://orcid.org/0000-0003-0991-9454"
+        title="ORCID | Piyush Pant"
+        target="_blank"
+        class="text-white my-2 fs-4 mx-2 oi"
+      >
+        <i class="fab fa-orcid"></i>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+
+    <script>
+      fetch("components/navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <script>
+      fetch("components/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+
+    <!-- Bootstrap JS (bundle includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

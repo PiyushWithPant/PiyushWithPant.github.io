@@ -1,0 +1,139 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: #171724;
+    /* background: black; */
+  }
+
+  main {
+    flex: 1;
+  }
+
+  .navbar-dark {
+    background-color: #171724 !important; /* your custom dark shade */
+  }
+
+  .footer-style{
+
+    
+    background-color: #171724 !important;
+    .transparent{
+        color:rgb(152, 152, 152);
+    }
+
+    
+  }
+
+  .btn-style{
+    color: inherit;
+    color:rgb(0, 151, 151);
+    font-size:20px;
+    /* font-family: 'Broadley'; */
+    border: 5px solid rgb(0, 151, 151);
+    padding: 5px 20px;
+    
+    transition: 0.3s;
+
+    text-decoration: none;
+
+    /* top:280px;
+    left:65px; */
+
+    font-family: "MV boli";
+
+    &:hover{
+        /* color:cyan;
+        border-color: cyan;  */
+        box-shadow: 2px 2px 8px white;
+    
+    }
+  }
+
+  /* .myimage:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+  }
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  } */
+  
+
+  .ghi{
+    i{
+      color: #b5b5b5;
+      transition: color 0.3s ease;
+      border-radius: 50%;
+    }
+    i:hover{
+      /* box-shadow: rgb(255, 255, 255) 0 0 100px 2px; */
+      color: white;
+      background-color: black;
+    
+    }
+    
+  }
+  .gsi{    i{
+    color: #b5b5b5;
+    transition: color 0.3s ease;
+    border-radius: 50%;
+  }
+  i:hover{
+    /* box-shadow: rgb(255, 255, 255) 0 0 100px 2px; */
+    color:white;
+  }}
+  .lki{    i{
+    color: #b5b5b5;
+    transition: color 0.3s ease;
+    border-radius: 50%;
+  }
+  i:hover{
+    /* box-shadow: rgb(255, 255, 255) 0 0 100px 2px; */
+    color:white;
+  }}
+  .wai{ 
+  i{
+
+    color: #b5b5b5;
+    transition: color 0.3s ease;
+    border-radius: 100%;
+  }
+  i:hover{
+    /* box-shadow: rgb(255, 255, 255) 0 0 100px 2px; */
+    color:white;
+
+  }}
+  .oi{    i{
+    color: #b5b5b5;
+    transition: color 0.3s ease;
+    border-radius: 50%;
+  }
+  i:hover{
+    /* box-shadow: rgb(255, 255, 255) 0 0 100px 2px; */
+
+    /* background-color: white; */
+    color:white;
+  }}
+
+  @keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+   }
+  
+   footer {
+    display: block !important;
+  }

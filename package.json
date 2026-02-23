@@ -1,0 +1,42 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "``` MyWebpage/ ├── public/              # Images, Favicons, Resume PDF ├── src/ │   ├── app/             # Next.js 15 App Router (Pages & Layouts) │   │   ├── layout.tsx   # Navbar, Sidebar, Footer, Visitor Count │   │   ├── page.tsx     # Bento-Grid Landing Page │   │   ├── publications/ │   │   ├── research/ │   │   └── blog/ │   ├── components/      # Reusable UI (Cards, Buttons, Timeline) │   │   ├── ui/          # Low-level \"Classy\" elements │   │   └── bento/       # Bento grid specific components │   ├── data/            # THE SOURCE OF TRUTH (Your JSON files) │   │   ├── publications.ts │   │   ├── models.ts │   │   └── timeline.ts │   └── lib/             # Utilities (The Sorter, SEO helpers) │       └── utils.ts ├── next.config.ts       # Configured for GitHub Pages └── tailwind.config.ts   # Custom colors & Glassmorphism themes ```",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "eslint": {
+    "ignoreDuringBuilds": true
+  },
+  "typescript": {
+    "ignoreBuildErrors": true
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.34.0",
+    "lucide-react": "^0.563.0",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
+}
