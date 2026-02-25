@@ -1,11 +1,11 @@
 // RESULTS & PUBLICATIONS PAGE
 
 "use client";
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { 
   Cpu, ShieldCheck, Microscope, BookOpen, FileText, 
   ImageIcon, Github, Layers, Globe, Database, 
-  FileDown, Quote, MessageSquare 
+  FileDown, Quote, MessageSquare, X, Copy, Check 
 } from "lucide-react"; 
 
 import { publications } from "@/data/publication";
@@ -39,7 +39,6 @@ const venueColorMap: Record<string, string> = {
   green: "border-emerald-500/50 text-emerald-400",
 };
 
-// Hex mapping for CSS variables
 const hexColorMap: Record<string, string> = {
   cyan: "#22d3ee",
   purple: "#a855f7",
@@ -48,6 +47,15 @@ const hexColorMap: Record<string, string> = {
 };
 
 export default function ResearchPage() {
+  const [selectedCite, setSelectedCite] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async (text: string) => {
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const sortedPublications = useMemo(() => {
     return [...publications]
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -63,7 +71,6 @@ export default function ResearchPage() {
 
       <div className="max-w-ultra mx-auto px-6 pt-44 pb-40 relative z-10">
         
-        {/* SECTION 1: INTERESTS */}
         <section className="mb-20 group/section">
           <div className="flex items-center gap-6 mb-16">
             <div className="p-4 bg-white/5 rounded-2xl border border-white/10 section-header-icon">
@@ -94,7 +101,6 @@ export default function ResearchPage() {
           </div>
         </section>
 
-        {/* SECTION 2: PUBLICATIONS */}
         <section className="group/section">
           <div className="flex items-center gap-6 mb-16">
             <div className="p-4 bg-white/5 rounded-2xl border border-white/10 section-header-icon">
@@ -111,7 +117,7 @@ export default function ResearchPage() {
                 
                 <div className="relative w-full md:w-80 h-56 md:h-auto overflow-hidden shrink-0 bg-black/40">
                   {pub.thumbnail ? (
-                    <img src={pub.thumbnail} alt={pub.title} className="w-full h-full object-cover grayscale group-hover/pub:grayscale-0 transition-all duration-700" />
+                    <img src={pub.thumbnail} alt={pub.title} className="w-full h-full object-cover grayscale-100 group-hover/pub:grayscale-0 transition-all duration-700" />
                   ) : (
                     <div className="pub-placeholder-pattern h-full">
                        <Layers size={64} className="opacity-10 group-hover/pub:opacity-30 transition-opacity" />
@@ -123,7 +129,7 @@ export default function ResearchPage() {
                 <div className="flex-1 p-8 flex flex-col justify-center">
                   <div className="flex justify-between items-start mb-4">
                     <span className="text-white/30 font-mono text-[10px] tracking-[0.4em] uppercase">{pub.venue}</span>
-                    <span className={`font-mono text-lg font-black ${venueColorMap[pub.uiColor]?.split(' ')[1]}`}>{pub.date.split('-')[0]}</span>
+                    <span className={`font-mono text-lg font-black ${venueColorMap[pub.uiColor]?.split(' ')[1]}`}>{pub.date.split('/')[0]}</span>
                   </div>
 
                   <h3 className="text-xl md:text-3xl font-black text-white group-hover/pub:text-white transition-colors mb-4 leading-tight tracking-tighter">
@@ -138,37 +144,36 @@ export default function ResearchPage() {
                     ))}
                   </p>
                   
-                  {/* UNIFIED BRANDED ACTION BUTTONS */}
                   <div className="flex flex-wrap gap-4 mt-auto">
                     {pub.links.pdf && (
-                      <a href={pub.links.pdf} style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
+                      <a href={pub.links.pdf} target="_blank" rel="noopener noreferrer" style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
                         <FileDown size={16} /> <span>PDF</span>
                       </a>
                     )}
                     {pub.links.arxiv && (
-                      <a href={pub.links.arxiv} style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
+                      <a href={pub.links.arxiv} target="_blank" rel="noopener noreferrer" style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
                         <FileText size={16} /> <span>arXiv</span>
                       </a>
                     )}
                     {pub.links.hf && (
-                      <a href={pub.links.hf} style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
+                      <a href={pub.links.hf} target="_blank" rel="noopener noreferrer" style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
                         <Database size={16} /> <span>HuggingFace</span>
                       </a>
                     )}
                     {pub.links.code && (
-                      <a href={pub.links.code} style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
+                      <a href={pub.links.code} target="_blank" rel="noopener noreferrer" style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
                         <Github size={16} /> <span>Code</span>
                       </a>
                     )}
                     {pub.links.openreview && (
-                      <a href={pub.links.openreview} style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
+                      <a href={pub.links.openreview} target="_blank" rel="noopener noreferrer" style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
                         <MessageSquare size={16} /> <span>OpenReview</span>
                       </a>
                     )}
                     {pub.links.cite && (
-                      <a href={pub.links.cite} style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn">
+                      <button onClick={() => setSelectedCite(pub.links.cite || '')} style={{"--accent-color": hexColorMap[pub.uiColor]} as any} className="pub-action-btn cursor-pointer">
                         <Quote size={16} /> <span>Cite</span>
-                      </a>
+                      </button>
                     )}
                   </div>
                 </div>
@@ -177,6 +182,38 @@ export default function ResearchPage() {
           </div>
         </section>
       </div>
+
+      {selectedCite && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/90 backdrop-blur-xl">
+          <div className="relative w-full max-w-3xl bg-[#080808] border border-white/10 rounded-[2.5rem] p-10 shadow-2xl overflow-hidden scale-105">
+            <div className="flex justify-between items-center mb-8">
+              <h3 className="text-white font-black italic uppercase tracking-[0.2em] text-base flex items-center gap-3">
+                <Quote size={22} className="text-brand-cyan" /> BibTeX Citation
+              </h3>
+              <button onClick={() => setSelectedCite(null)} className="text-gray-500 hover:text-white transition-all hover:rotate-90">
+                <X size={28} />
+              </button>
+            </div>
+            
+            <div className="relative group mt-4">
+              <pre className="bg-black/80 border border-white/5 rounded-2xl p-8 text-gray-300 font-mono text-sm overflow-x-auto leading-relaxed min-h-[250px] pt-16">
+                {selectedCite}
+              </pre>
+              <button 
+                onClick={() => handleCopy(selectedCite)}
+                className="absolute top-6 right-6 p-4 bg-white/5 hover:bg-brand-cyan/10 border border-white/10 hover:border-brand-cyan/30 rounded-2xl transition-all flex items-center gap-3 group/copy active:scale-95"
+              >
+                {copied ? <Check size={20} className="text-green-400" /> : <Copy size={20} className="text-brand-cyan group-hover/copy:scale-110 transition-transform" />}
+                <span className="text-xs font-black text-white uppercase tracking-widest">{copied ? "Copied!" : "Copy"}</span>
+              </button>
+            </div>
+            
+            <p className="mt-8 text-[14px] font-mono text-gray-500 uppercase tracking-[0.4em] text-center">
+              Thank you for citing us ❤️😊
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
