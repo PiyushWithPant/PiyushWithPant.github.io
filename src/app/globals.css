@@ -1,3 +1,5 @@
+/* GLOBAL CSS */
+
 @import "tailwindcss";
 
 @theme {
@@ -35,7 +37,7 @@
   }
 
   @media (max-width: 767px) {
-    @apply whitespace-normal border-none text-center;
+    @apply whitespace-normal border-none text-center block mx-auto max-w-full;
     width: auto !important;
   }
 }
@@ -56,7 +58,7 @@
 }
 
 .btn-style {
-  @apply border-4 border-brand-cyan text-brand-cyan px-8 py-3 rounded-xl 
+  @apply border-4 border-brand-cyan text-brand-cyan px-6 md:px-8 py-3 rounded-xl 
          transition-all duration-300 font-mono text-base tracking-widest cursor-pointer font-bold;
 }
 
@@ -109,11 +111,13 @@
     radial-gradient(1.5px 1.5px at 50px 160px, #fff, rgba(0,0,0,0)),
     radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
     radial-gradient(1.5px 1.5px at 130px 80px, var(--color-brand-cyan), rgba(0,0,0,0));
-  background-size: 200px 200px;
-  animation: warpMove var(--speed) linear infinite;
-  opacity: var(--opacity);
-  /* The original tilting logic */
-  transform: rotateX(calc(var(--mouse-y) * 0.02deg)) rotateY(calc(var(--mouse-x) * 0.02deg));
+    background-size: 200px 200px;
+    animation: warpMove var(--speed) linear infinite;
+    opacity: var(--opacity);
+    /* Add these two lines to stop layout thrashing */
+    transform: rotateX(calc(var(--mouse-y) * 0.02deg)) rotateY(calc(var(--mouse-x) * 0.02deg));
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 @keyframes warpMove {
@@ -192,7 +196,7 @@
   }
 }
 
-/* --- Your Original Hover Idea (Restore) --- */
+/* --- Your Original Hover Idea--- */
 .hover-glow-effect:hover {
   /* Stop the sweep/fade immediately on hover */
   -webkit-text-fill-color: #fff !important;
@@ -218,6 +222,8 @@
   position: relative;
   /* High priority animation for the 0.6s swap window */
   animation: master-glitch 0.6s ease-in-out forwards !important;
+  will-change: transform, filter;
+  transform: translateZ(0);
 }
 
 @keyframes master-glitch {
@@ -279,6 +285,8 @@
 .planet-body {
   animation: planet-pulse 4s ease-in-out infinite;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Sudden "Pop" Evolution */
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 .animate-spin-slow {
@@ -328,6 +336,8 @@
   animation: float 6s ease-in-out infinite;
   @apply object-cover shadow-xl transition-all duration-700 border-2 border-white/10;
   filter: none !important;
+  will-change: transform, filter, opacity;
+  transform: translateZ(0);
 }
 
 .group:hover .ellipse-shape {
@@ -740,6 +750,7 @@ a, .no-underline { text-decoration: none !important; }
   box-shadow: 0 0 10px #00f0ff;
   opacity: 0;
   will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 /* Creating turbulent, organic motion for the fire */
@@ -748,9 +759,6 @@ a, .no-underline { text-decoration: none !important; }
     transform: translate3d(-50%, 20px, 0) scale(1); 
     opacity: 0.9; 
   }
-  25% { transform: translate3d(-100%, -30px, 0) scale(1.2); }
-  50% { transform: translate3d(50%, -60px, 0) scale(0.8); }
-  75% { transform: translate3d(-20%, -90px, 0) scale(0.5); }
   100% { 
     transform: translate3d(0, -120px, 0) scale(0); 
     opacity: 0; 
@@ -780,8 +788,17 @@ body::-webkit-scrollbar {
 /*! ---------------------------  Custom CURSOR --------------------------- */
 /* src/app/globals.css */
 
-html, body, a, button {
-  cursor: none !important;
+@media (min-width: 1024px) {
+  html, body, a, button {
+    cursor: none !important;
+  }
+}
+
+/* Ensure default cursor returns for mobile/touch devices */
+@media (max-width: 1023px) {
+  html, body, a, button {
+    cursor: auto !important;
+  }
 }
 
 /* 1. The Flicker Effect: Rapid, slightly erratic movement and scaling */

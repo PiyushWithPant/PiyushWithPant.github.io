@@ -34,14 +34,14 @@ function SearchResults() {
   const totalResults = results.publications.length + results.projects.length + results.blogs.length;
 
   return (
-    <main className="relative min-h-screen w-full bg-black">
+    <main className="relative min-h-screen w-full bg-black overflow-x-hidden">
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Starfield />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-44 pb-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-32 md:pt-44 pb-20">
         <div className="mb-12">
-          <h1 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter">
+          <h1 className="text-3xl md:text-6xl font-black text-white italic uppercase tracking-tighter break-words">
             Query: <span className="text-brand-cyan">"{query}"</span>
           </h1>
           <p className="text-gray-500 font-mono text-[10px] mt-4 uppercase tracking-[0.3em]">
@@ -94,7 +94,7 @@ function SearchResults() {
 
           {/* No Results View */}
           {totalResults === 0 && (
-            <div className="py-20 text-center border border-white/5 bg-white/[0.02] rounded-3xl">
+            <div className="py-20 text-center border border-white/5 bg-white/[0.02] rounded-3xl px-4">
               <Search size={40} className="mx-auto text-gray-800 mb-4" />
               <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">
                 Access Denied: No matching data found
@@ -125,16 +125,16 @@ function SearchResultCard({ item, href, color }: { item: any, href: string, colo
   const borderClass = color === "cyan" ? "group-hover:border-brand-cyan/30" : color === "purple" ? "group-hover:border-purple-400/30" : "group-hover:border-rose-400/30";
 
   return (
-    <Link href={href} className={`flex items-center justify-between p-6 bg-white/[0.03] border border-white/10 rounded-2xl transition-all duration-300 no-underline group ${borderClass}`}>
-      <div className="flex-1 pr-4">
-        <h3 className={`text-white font-bold italic uppercase tracking-tight transition-colors ${accentClass}`}>
+    <Link href={href} className={`flex items-center justify-between p-4 md:p-6 bg-white/[0.03] border border-white/10 rounded-2xl transition-all duration-300 no-underline group ${borderClass}`}>
+      <div className="flex-1 pr-4 min-w-0"> {/* Added min-w-0 to allow truncation to work in flex */}
+        <h3 className={`text-base md:text-xl font-bold italic uppercase tracking-tight transition-colors truncate ${accentClass}`}>
           {item.title || "Untitled Entry"}
         </h3>
-        <p className="text-gray-500 text-[10px] font-mono mt-1 uppercase truncate max-w-md">
+        <p className="text-gray-500 text-[10px] font-mono mt-1 uppercase truncate w-full">
           {item.venue || item.description || item.excerpt || "View Details"}
         </p>
       </div>
-      <ArrowRight size={18} className={`text-gray-700 transition-all transform group-hover:translate-x-1 ${accentClass}`} />
+      <ArrowRight size={18} className={`text-gray-700 transition-all shrink-0 transform group-hover:translate-x-1 ${accentClass}`} />
     </Link>
   );
 }

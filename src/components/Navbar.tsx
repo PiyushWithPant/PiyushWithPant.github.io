@@ -1,3 +1,5 @@
+// NAVBAR
+
 "use client";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
@@ -27,28 +29,37 @@ const Navbar = () => {
     if (isSearchOpen) searchInputRef.current?.focus();
   }, [isSearchOpen]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setIsSearchOpen(false);
       setSearchQuery("");
+      setIsOpen(false); // Close mobile menu after search
     }
   };
 
   return (
     <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isHome 
+      className={`fixed top-0 w-full z-60 transition-all duration-500 ${
+        isHome && !isOpen
           ? "bg-transparent border-transparent" 
           : "bg-brand-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/20"
-      }`}
+      }${isOpen ? "h-auto pb-10" : "h-20"}`}
     >
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* LEFT: LOGO */}
-          <Link href="/" className="group flex items-center shrink-0">
+          <Link href="/" className="group flex items-center shrink-0 relative z-[70]">
             <span className="text-xl font-bold tracking-tight text-white transition-all group-hover:text-brand-cyan group-hover:drop-shadow-[0_0_10px_#00f0ff]">
               Piyush Pant <span className="inline-block group-hover:rotate-12 transition-transform duration-300 ml-1">🥰</span>
             </span>
@@ -105,7 +116,18 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden relative z-[70] flex items-center gap-2">
+            {/* MOBILE SEARCH TOGGLE */}
+            <button 
+              onClick={() => {
+                setIsOpen(true);
+                setIsSearchOpen(true);
+              }} 
+              className="p-2 text-gray-400 hover:text-brand-cyan transition-colors"
+            >
+              <Search size={20} />
+            </button>
+
             <button 
               onClick={() => setIsOpen(!isOpen)} 
               className="p-2 text-gray-400 hover:text-brand-cyan transition-colors"
@@ -123,18 +145,38 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 10 }}
-            className="fixed inset-0 top-20 bg-brand-dark/98 backdrop-blur-3xl z-40 md:hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="relative w-full md:hidden flex flex-col items-center pt-4 pb-10 space-y-10 px-6 overflow-hidden"
           >
-            <div className="flex flex-col items-center justify-center h-[70vh] space-y-10 px-6">
+            {/* MOBILE SEARCH FORM */}
+            <form onSubmit={handleSearchSubmit} className="w-full max-w-sm px-4">
+              <div className="relative">
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Search the Universe..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-5 pr-12 text-sm font-mono text-brand-cyan focus:outline-none focus:border-brand-cyan/50"
+                />
+                <button type="submit" className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-cyan">
+                  <Search size={18} />
+                </button>
+              </div>
+            </form>
+
+            <div className="flex flex-col items-center space-y-10 px-6">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   href={link.href} 
                   className="text-3xl font-light text-gray-300 hover:text-brand-cyan transition-colors"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsSearchOpen(false);
+                  }}
                 >
                   {link.name}
                 </Link>

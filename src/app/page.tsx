@@ -23,7 +23,7 @@ const GREETINGS = [
   { hello: "안녕하세요 🇰🇷", intro: "저는 피유시 판트입니다" }, 
   { hello: "Olà 🇵🇹", intro: "Eu sou Piyush Pant" }, 
   { hello: "ನಮಸ್ಕಾರ 🇮🇳", intro: "ನಾನು ಪಿಯೂಷ್ ಪಂತ್" }, 
-  { hello: "வணக்கம் 🇮🇳", intro: "நான் பியೂஷ் பந்த்" }, 
+  { hello: "வணக்கம் 🇮🇳", intro: "நான் பியூஷ் பந்த்" }, 
   { hello: "Sveiki 🇱🇻", intro: "Es esmu Piyush Pant" }, 
   { hello: "مرحباً 🇦🇪", intro: "أنا بيوش بانت" }, 
 ];
@@ -82,8 +82,9 @@ export default function Home() {
     { icon: <SiOrcid />, href: "https://orcid.org/0000-0003-0991-9454" }
   ];
 
+  
   return (
-    <div ref={containerRef} className="relative flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-8 overflow-hidden">
+    <div ref={containerRef} className="relative mt-8 flex flex-col items-center justify-center min-h-screen px-6 md:px-8 overflow-hidden pt-20 md:pt-0">
       
       <Starfield />
     
@@ -91,14 +92,14 @@ export default function Home() {
         variants={containerVars}
         initial="initial"
         animate="animate"
-        className="w-full max-w-6xl flex flex-col items-center mt-10"
+        className="w-full max-w-6xl flex flex-col items-center"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center md:-ml-32 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center md:-ml-32 w-full">
           <motion.div variants={itemVars} className="flex justify-center md:justify-end">
             <img
               src="/img1.jpg"
               alt="Piyush Pant"
-              className="w-64 h-auto md:w-80 ellipse-shape relative z-10"
+              className="w-48 h-auto sm:w-64 md:w-80 ellipse-shape relative z-10"
             />
           </motion.div>
 
@@ -107,21 +108,21 @@ export default function Home() {
             <div className={`transition-all duration-300 ${isInterfering ? 'text-interference language-sweep' : ''}`}>
               <motion.h2 
                 variants={itemVars} 
-                className="text-4xl md:text-5xl font-bold mb-1 text-gray-200 hover-glow-effect cursor-default whitespace-nowrap"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 text-gray-200 hover-glow-effect cursor-default whitespace-nowrap"
               >
                 {GREETINGS[index].hello}
               </motion.h2>
 
               <motion.h1 
                 variants={itemVars} 
-                className="text-4xl md:text-6xl font-black mb-6 text-white leading-tight hover-glow-effect cursor-default whitespace-nowrap"
+                className="text-3xl sm:text-4xl md:text-6xl font-black mb-6 text-white leading-tight hover-glow-effect cursor-default whitespace-nowrap"
               >
                 {GREETINGS[index].intro}
               </motion.h1>
             </div>
 
             <motion.div variants={itemVars} className="mb-12" layout>
-              <p className="scrolling-text animate-typing-once text-xl md:text-xl data-stream-hover cursor-default">
+              <p className="scrolling-text animate-typing-once text-lg sm:text-xl data-stream-hover cursor-default">
                 AI Researcher • Developer • Martial Artist
               </p>
             </motion.div>
@@ -136,7 +137,7 @@ export default function Home() {
 
         <motion.div 
           variants={itemVars}
-          className="flex items-center justify-center gap-10 mt-20 md:mt-24 z-10"
+          className="flex items-center justify-center gap-6 sm:gap-10 mt-12 md:mt-24 z-10"
         >
           {socialLinks.map((social, index) => (
             <a 
@@ -144,7 +145,7 @@ export default function Home() {
               href={social.href} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-3xl text-[#b5b5b5] transition-all duration-300 hover:text-white hover:scale-110 hover:[filter:drop-shadow(0_0_10px_rgba(255,255,255,0.8))]"
+              className="text-2xl sm:text-3xl text-[#b5b5b5] transition-all duration-300 hover:text-white hover:scale-110 hover:[filter:drop-shadow(0_0_10px_rgba(255,255,255,0.8))]"
             >
               {social.icon}
             </a>

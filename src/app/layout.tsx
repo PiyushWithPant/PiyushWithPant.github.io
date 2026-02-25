@@ -12,11 +12,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://piyushpant.github.io"), // Replace with your actual domain
   title: {
-    default: "Piyush Pant | My Webpage",
+    default: "Piyush Pant | AI Researcher and Developer",
     template: "%s | Piyush Pant"
   },
-  description: "Personal portfolio of Piyush Pant. AI Researcher at Saarland University/CISPA specializing in Adversarial ML, Trustworthy AI, and NLP.",
-  keywords: ["Piyush Pant", "AI Researcher", "Adversarial Machine Learning", "Trustworthy AI", "NLP", "Computer Science Portfolio", "Safe Reinforcement Learning", "Machine Learning", "Piyush Pant AI", "Piyush Pant Research", "Piyush Pant PhD"],
+  description: "Personal portfolio of Piyush Pant. AI Researcher specializing in Adversarial ML, Trustworthy AI, and NLP.",
+  keywords: ["Piyush Pant", "AI Researcher", "Adversarial Machine Learning", "Trustworthy AI", "NLP", "Computer Science", "Safe Reinforcement Learning", "Machine Learning", "Piyush Pant AI", "Piyush Pant Research", "Piyush Pant PhD"],
   authors: [{ name: "Piyush Pant" }],
   creator: "Piyush Pant",
   icons: { 
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://piyushpant.github.io",
-    title: "Piyush Pant | AI Researcher & Developer",
+    title: "Piyush Pant | AI Researcher and Developer",
     description: "Researching the future of Safe and Trustworthy AI. Explore my publications and engineering projects.",
     siteName: "Piyush Pant Portfolio",
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Piyush Pant | AI Researcher & Developer",
+    title: "Piyush Pant | AI Researcher and Developer",
     description: "AI Researcher specializing in Adversarial ML and NLP.",
     images: ["/og-image.png"],
     // creator: "@your_twitter_handle", 

@@ -99,7 +99,10 @@ export default function ContactPage() {
                 <input required name="email" type="email" placeholder="EMAIL ADDRESS" className="contact-input" />
               </div>
 
-              <textarea required name="message" rows={4} placeholder="YOUR MESSAGE..." className="contact-input pt-4"></textarea>
+              <div className="relative">
+                <MessageSquare className="absolute left-4 top-6 text-gray-600" size={18} />
+                <textarea required name="message" rows={4} placeholder="YOUR MESSAGE..." className="contact-input pt-4"></textarea>
+              </div>
 
               <input type="text" name="_gotcha" style={{display: 'none'}} />
 

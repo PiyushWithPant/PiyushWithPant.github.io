@@ -37,7 +37,7 @@ export default function ResumePage() {
 
           {/* THE BUTTON */}
           <a 
-            href="YOUR_GOOGLE_DRIVE_LINK" 
+            href="https://drive.google.com/drive/folders/1XxM58ny7tP-xgIlqpsaQz86sr9VY4ymW?usp=sharing" 
             className="cv-download-btn"
             target="_blank"
             rel="noopener noreferrer"
