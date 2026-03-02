@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollFire from "@/components/ScrollFire";
 import CustomCursor from "@/components/CustomCursor";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,6 +69,15 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-[#171724] text-white min-h-screen flex flex-col antialiased`}>
         
+
+        {/* VISITOR COUNT */}
+        <Script
+          data-goatcounter="https://piyush.goatcounter.com/count"
+          src="//gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
+
+
         <Navbar />
 
         <CustomCursor />
