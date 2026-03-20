@@ -11,19 +11,19 @@ export interface BlogPost {
   export const blogPosts: BlogPost[] = [
     {
       id: "blog-1",
-      slug: "philosophy-of-ai-alignment",
-      title: "The Philosophy of AI Alignment",
+      slug: "None",
+      title: "None",
       date: "2026-01-12",
-      excerpt: "Exploring how ancient Kumaon wisdom and Himalayan stoicism can inform modern AI safety guardrails...",
+      excerpt: "None",
       color: "amber",
       content: "Full markdown content goes here..."
     },
     {
       id: "blog-2",
-      slug: "judo-and-neural-nets",
-      title: "Judo and Neural Networks",
+      slug: "None",
+      title: "None",
       date: "2026-02-05",
-      excerpt: "What off-balancing an opponent in Randori taught me about gradient descent and optimization stability.",
+      excerpt: "None",
       color: "blue",
       content: "Full markdown content goes here..."
     }

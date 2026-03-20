@@ -20,7 +20,7 @@ export interface Publication {
 }
 
 //! Use Backticks `` for adding Bibtex citation
-//* Color choices - cyan, purple, rose, amber, indigo, blue, white, gray
+//* Color choices - cyan, purple, rose
 
 export const publications: Publication[] = [
   {
@@ -28,7 +28,7 @@ export const publications: Publication[] = [
     title: "GREAT: Generalizable Backdoor Attacks in RLHF via Emotion-Aware Trigger Synthesis",
     authors: ["S.K. Dutta", "Yuelin Xu", "Piyush Pant", "Xiao Zhang"],
     thumbnail: "/publications/great.png",  // points to public/
-    venue: "arXiv Pre-print",
+    venue: "arXiv Pre-print | Under Review",
     date: "2025/10/10",
     color: "cyan",
     links: {
@@ -77,7 +77,7 @@ export const publications: Publication[] = [
     id: "pub-3",
     title: "Improving LLM Safety and Helpfulness using SFT and DPO: A Study on OPT-350M",
     authors: ["Piyush Pant"],
-    venue: "arXiv Pre-print",
+    venue: "arXiv Pre-print | Independent Research",
     date: "2025/9/10",
     thumbnail: "/publications/improving_llm_safety.png",  // points to public/
     color: "rose",
@@ -98,13 +98,87 @@ export const publications: Publication[] = [
     }
   },
 
-  // {
+    {
+    id: "pub-4",
+    title: "Authentication and Authorization in Modern Web Apps for Data Security using Nodejs and Role of Dark Web",
+    authors: ["Piyush Pant", "Anand Singh Rajawat", "SB Goyal", "Pradeep Bedi", "Chaman Verma", "Maria Simona Raboaca", "Florentina Magda Enescu"],
+    venue: "ICIDCA 2022 | Procedia Computer Science 215 (Pg 781–790) - Elsevier",
+    date: "2022/1/1",     
+    thumbnail: "/publications/auth.png",  // points to public/
+    color: "purple",
+    links: {
+      arxiv: "https://www.sciencedirect.com/science/article/pii/S1877050922021512",
+      pdf: "https://www.sciencedirect.com/science/article/pii/S1877050922021512/pdf?md5=8eb2ca7db3fdf6734d16faa4721e7aff&pid=1-s2.0-S1877050922021512-main.pdf",
+      code: "",
+      cite: `@article{pant2022authentication,
+  title={Authentication and authorization in modern web apps for data security using Nodejs and role of dark web},
+  author={Pant, Piyush and Rajawat, Anand Singh and Goyal, SB and Bedi, Pradeep and Verma, Chaman and Raboaca, Maria Simona and Enescu, Florentina Magda},
+  journal={Procedia Computer Science},
+  volume={215},
+  pages={781--790},
+  year={2022},
+  publisher={Elsevier}
+}`,
+    }
+  },
+
+  {
+    id: "pub-5",
+    title: "Blockchain for AI-Enabled Industrial IoT with 5G Network",
+    authors: ["Piyush Pant", "Anand Singh Rajawat", "SB Goyal", "Pradeep Bedi", "Chaman Verma", "Florentina Magda Enescu", "Maria Simona Răboacă", "Traian Candin Mihălţan"],
+    venue: "14th Intl. Conf. on Electronics, Computers and Artificial Intelligence (ECAI) | IEEE",
+    date: "2022/6/30",
+    thumbnail: "/publications/ecai1.png",  // points to public/
+    color: "cyan",
+    links: {
+      arxiv: "",
+      pdf: "https://ieeexplore.ieee.org/abstract/document/9847428",
+      code: "",
+      cite: `@inproceedings{pant2022blockchain,
+  title={Blockchain for AI-enabled industrial IoT with 5G network},
+  author={Pant, Piyush and Rajawat, Anand Singh and Goyal, SB and Bedi, Pradeep and Verma, Chaman and Enescu, Florentina Magda and Raboaca, Maria Simona and Mihaltan, Traian Candin},
+  booktitle={2022 14th International Conference on Electronics, Computers and Artificial Intelligence (ECAI)},
+  pages={1--4},
+  year={2022},
+  organization={IEEE}
+}`,
+    }
+  },
+
+    {
+    id: "pub-6",
+    title: "Machine Learning Techniques for Analysis of Mars Weather Data",
+    authors: ["Piyush Pant", "Anand Singh Rajawat", "SB Goyal", "Baharu Bin Kemat", "Traian Candin Mihălţan", "Chaman Verma", "Maria Simona Răboacă",],
+    venue: "15th Intl. Conf. on Electronics, Computers and Artificial Intelligence (ECAI) | IEEE",
+    date: "2023/6/29",
+    thumbnail: "/publications/ecai2.png",  // points to public/
+    color: "purple",
+    links: {
+      arxiv: "",
+      pdf: "https://ieeexplore.ieee.org/abstract/document/10194233",
+      code: "",
+      cite: `@INPROCEEDINGS{10194233,
+  author={Pant, Piyush and Rajawat, Anand Singh and Goyal, S. B. and Kemat, Baharu Bin and Mihălţan, Traian Candin and Verma, Chaman and Răboacă, Maria Simona},
+  booktitle={2023 15th International Conference on Electronics, Computers and Artificial Intelligence (ECAI)}, 
+  title={Machine Learning Techniques for Analysis of Mars Weather Data}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-7},
+  keywords={Mars;Temperature distribution;Machine learning algorithms;Atmospheric modeling;Space missions;Linear regression;Machine learning;Artificial Intelligence;Machine Learning;Data Analysis;Data Science;Mars;Mars weather data},
+  doi={10.1109/ECAI58194.2023.10194233}}
+`,
+    }
+  },
+
+      // {
   //   id: "",
   //   title: "",
   //   authors: ["Piyush Pant"],
   //   venue: "arXiv Pre-print",
   //   date: "2020/10/12",
-  //   color: "amber",
+  //   thumbnail: "/publications/improving_llm_safety.png",  // points to public/
+  //   color: "purple",
   //   links: {
   //     arxiv: "",
   //     pdf: "",
