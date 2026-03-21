@@ -105,7 +105,7 @@ export const publications: Publication[] = [
     venue: "ICIDCA 2022 | Procedia Computer Science 215 (Pg 781–790) - Elsevier",
     date: "2022/1/1",     
     thumbnail: "/publications/auth.png",  // points to public/
-    color: "purple",
+    color: "rose",
     links: {
       arxiv: "https://www.sciencedirect.com/science/article/pii/S1877050922021512",
       pdf: "https://www.sciencedirect.com/science/article/pii/S1877050922021512/pdf?md5=8eb2ca7db3fdf6734d16faa4721e7aff&pid=1-s2.0-S1877050922021512-main.pdf",
@@ -122,31 +122,10 @@ export const publications: Publication[] = [
     }
   },
 
-  {
-    id: "pub-5",
-    title: "Blockchain for AI-Enabled Industrial IoT with 5G Network",
-    authors: ["Piyush Pant", "Anand Singh Rajawat", "SB Goyal", "Pradeep Bedi", "Chaman Verma", "Florentina Magda Enescu", "Maria Simona Răboacă", "Traian Candin Mihălţan"],
-    venue: "14th Intl. Conf. on Electronics, Computers and Artificial Intelligence (ECAI) | IEEE",
-    date: "2022/6/30",
-    thumbnail: "/publications/ecai1.png",  // points to public/
-    color: "cyan",
-    links: {
-      arxiv: "",
-      pdf: "https://ieeexplore.ieee.org/abstract/document/9847428",
-      code: "",
-      cite: `@inproceedings{pant2022blockchain,
-  title={Blockchain for AI-enabled industrial IoT with 5G network},
-  author={Pant, Piyush and Rajawat, Anand Singh and Goyal, SB and Bedi, Pradeep and Verma, Chaman and Enescu, Florentina Magda and Raboaca, Maria Simona and Mihaltan, Traian Candin},
-  booktitle={2022 14th International Conference on Electronics, Computers and Artificial Intelligence (ECAI)},
-  pages={1--4},
-  year={2022},
-  organization={IEEE}
-}`,
-    }
-  },
+ 
 
     {
-    id: "pub-6",
+    id: "pub-5",
     title: "Machine Learning Techniques for Analysis of Mars Weather Data",
     authors: ["Piyush Pant", "Anand Singh Rajawat", "SB Goyal", "Baharu Bin Kemat", "Traian Candin Mihălţan", "Chaman Verma", "Maria Simona Răboacă",],
     venue: "15th Intl. Conf. on Electronics, Computers and Artificial Intelligence (ECAI) | IEEE",
@@ -168,6 +147,29 @@ export const publications: Publication[] = [
   keywords={Mars;Temperature distribution;Machine learning algorithms;Atmospheric modeling;Space missions;Linear regression;Machine learning;Artificial Intelligence;Machine Learning;Data Analysis;Data Science;Mars;Mars weather data},
   doi={10.1109/ECAI58194.2023.10194233}}
 `,
+    }
+  },
+
+        {
+    id: "pub-6",
+    title: "Deep Q-Learning for Virtual Autonomous Automobile",
+    authors: ["Piyush Pant", "Rajendra Sinha", "Anand Singh Rajawat", "SB Goyal", "Masri bin Abdul Lasi"],
+    venue: "ICDAM-2023 | Springer",
+    date: "2023/6/23",
+    thumbnail: "/publications/qlearn.png",  // points to public/
+    color: "cyan",
+    links: {
+      arxiv: "",
+      pdf: "https://www.researchgate.net/publication/377392318_Deep_Q-Learning_for_Virtual_Autonomous_Automobile",
+      code: "",
+      cite: `@inproceedings{pant2023deep,
+  title={Deep Q-Learning for Virtual Autonomous Automobile},
+  author={Pant, Piyush and Sinha, Rajendra and Rajawat, Anand Singh and Goyal, SB and Lasi, Masri bin Abdul},
+  booktitle={International Conference on Data Analytics \& Management},
+  pages={203--216},
+  year={2023},
+  organization={Springer}
+}`,
     }
   },
 

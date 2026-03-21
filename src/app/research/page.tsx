@@ -179,7 +179,24 @@ export default function ResearchPage() {
                 </div>
               </div>
             ))}
-          </div>
+            </div>
+            {/* EARLY RESEARCH FOOTNOTE */}
+              <div className="mt-24 pt-12 border-t border-white/5 text-center max-w-2xl mx-auto">
+                <div className="flex justify-center gap-2 mb-4 opacity-20">
+                  <div className="w-1 h-1 rounded-full bg-white"></div>
+                  <div className="w-1 h-1 rounded-full bg-white"></div>
+                  <div className="w-1 h-1 rounded-full bg-white"></div>
+                </div>
+                
+                <p className="text-gray-500 font-mono text-[11px] uppercase tracking-[0.3em] leading-relaxed italic">
+                  Archives contain additional early-stage research and exploratory work conducted during my initial training phase. 
+                  Some of my Early-stage research and undergraduate explorations are intentionally omitted from this view to ensure focus on my most robust, high-impact contributions to the field.
+                </p>
+                
+                <p className="mt-6 text-gray-700 font-bold text-[9px] uppercase tracking-[0.5em]">
+                End of Peer-Reviewed Records
+                </p>
+              </div>
         </section>
       </div>
 

@@ -78,6 +78,7 @@ export default function ProjectsPage() {
                   <a 
                     href={project.links.github} 
                     className="project-btn"
+                    target="_blank"
                   >
                     <Github size={16} />
                     <span>Source</span>
@@ -86,6 +87,7 @@ export default function ProjectsPage() {
                     <a 
                       href={project.links.demo} 
                       className="project-btn"
+                      target="_blank"
                     >
                       <Globe size={16} />
                       <span>Live</span>
@@ -95,6 +97,23 @@ export default function ProjectsPage() {
               </div>
             </div>
           ))}
+        </div>
+
+
+        {/* GITHUB FOOTER */}
+        <div className="mt-24 text-center">
+          <a 
+            href="https://github.com/piyushwithpant" 
+            target="_blank" 
+            className="group inline-flex flex-col items-center gap-4 no-underline"
+          >
+            <p className="text-gray-500 font-mono text-[11px] uppercase tracking-[0.3em] group-hover:text-brand-cyan transition-colors">
+              For more interesting projects, visit my GitHub
+            </p>
+            <div className="p-4 bg-white/5 rounded-2xl border border-white/10 group-hover:border-brand-cyan/50 group-hover:bg-brand-cyan/10 transition-all duration-500">
+              <Github size={32} className="text-gray-400 group-hover:text-brand-cyan group-hover:scale-110 transition-all" />
+            </div>
+          </a>
         </div>
       </div>
     </div>

@@ -10,48 +10,82 @@ export interface Project {
       demo?: string;
     };
   }
+
+  // COLORS: cyan, purple, rose, green
   
   export const projects: Project[] = [
     {
       id: "proj-1",
-      title: "Martial Arts Tracker",
-      description: "A specialized performance tracking dashboard for Judo and BJJ practitioners to log rounds, techniques, and recovery.",
+      title: "TextUtils",
+      description: "TextUtils is a React App which provides with basic text editing along with dark mode feature.",
       color: "purple",
-      tags: ["Next.js", "Firebase", "Recharts", "Python"],
+      image: "projects/textutils.png",
+      tags: ["React.js", "JavaScript", "HTML", "CSS"],
       links: {
-        github: "https://github.com/...",
-        demo: "https://tracker.demo"
+        github: "https://github.com/PiyushWithPant/TextUtils",
+        demo: "https://piyushwithpant.github.io/TextUtils/"
       }
     },
     {
       id: "proj-2",
-      title: "Neuro-Adversarial Vision",
-      description: "Research-oriented implementation of adversarial attacks on CNNs with real-time perturbation visualization.",
+      title: "NewsApp",
+      description: "NewsApp is a react app for daily news with categories & features like infinite scroll, loading bar, etc.",
       color: "cyan",
-      tags: ["PyTorch", "OpenCV", "FastAPI"],
+      tags: ["React.js", "JavaScript", "HTML"],
       links: {
-        github: "https://github.com/..."
+        github: "https://github.com/PiyushWithPant/NewsApp-Project-ReactJS"
       }
     },
     {
         id: "proj-3",
-        title: "Martial Arts Tracker",
-        description: "A specialized performance tracking dashboard for Judo and BJJ practitioners to log rounds, techniques, and recovery.",
+        title: "YDSF Main Webapp",
+        description: "Main web application for YDSF",
         color: "rose",
-        tags: ["Next.js", "Firebase", "Recharts"],
+        tags: ["Pug", "JavaScript", "CSS"],
         links: {
-          github: "https://github.com/...",
-          demo: "https://tracker.demo"
+          github: "https://github.com/PiyushWithPant/ydsf-project",
         }
       },
       {
         id: "proj-4",
-        title: "Neuro-Adversarial Vision",
-        description: "Research-oriented implementation of adversarial attacks on CNNs with real-time perturbation visualization.",
+        title: "iNotebook",
+        description: "An Application where user can create, update, delete their notes and user's workspace is secured.",
         color: "green",
         tags: ["PyTorch", "OpenCV", "FastAPI"],
         links: {
-          github: "https://github.com/..."
+          github: "https://github.com/PiyushWithPant/iNotebook"
         }
-      }
+      },
+      {
+        id: "proj-5",
+        title: "WebApp - MyIndia",
+        description: "Hackathon project Theme - 'Cultural Heritage and Traditions of India'. ",
+        color: "purple",
+        tags: ["JavaScript", "HTML", "CSS"],
+        links: {
+          github: "https://github.com/PiyushWithPant/MyIndia"
+        }
+      },
+      {
+        id: "proj-6",
+        title: "ScoreKeeper",
+        description: "DOM Manipulation project to keep score of a game. It has features like incrementing, decrementing and resetting the score.",
+        color: "cyan",
+        tags: ["JavaScript", "HTML", "CSS"],
+        image: "projects/scorekeeper.png",
+        links: {
+          github: "https://github.com/PiyushWithPant/DOM-JavaScript"
+        }
+      },
+      {
+        id: "proj-6",
+        title: "ToDo List App",
+        description: "A simple ToDo List App built using JavaScript, HTML and CSS. It allows users to add, delete and mark tasks as completed.",
+        color: "rose",
+        tags: ["JavaScript", "HTML", "CSS"],
+        image: "projects/todo.png",
+        links: {
+          github: "https://github.com/PiyushWithPant/DOM-JavaScript"
+        }
+      },
   ];
