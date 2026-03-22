@@ -78,7 +78,7 @@ export interface Project {
         }
       },
       {
-        id: "proj-6",
+        id: "proj-7",
         title: "ToDo List App",
         description: "A simple ToDo List App built using JavaScript, HTML and CSS. It allows users to add, delete and mark tasks as completed.",
         color: "rose",
@@ -88,4 +88,32 @@ export interface Project {
           github: "https://github.com/PiyushWithPant/DOM-JavaScript"
         }
       },
+
+
+      {
+        id: "proj-8",
+        title: "Meet your Pandit - WebApp",
+        description: "A website to meet pandit (priests) for your pujas (worships/rituals) in cities.",
+        color: "purple",
+        tags: ["JavaScript", "EJS", "CSS"],
+
+        links: {
+          github: "https://github.com/PiyushWithPant/Meet-your-Pandit-project"
+        }
+      },
+
+
+
+      {
+        id: "proj-9",
+        title: "City Guider - WebApp",
+        description: "A website to guide tourists about the places to visit, eat and stay in a city.",
+        color: "green",
+        tags: ["JavaScript", "EJS", "CSS"],
+
+        links: {
+          github: "https://github.com/PiyushWithPant/CITYGUIDER-FOR-VLOGGERS"
+        }
+      },
+      
   ];
