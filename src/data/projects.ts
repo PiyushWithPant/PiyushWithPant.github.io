@@ -16,6 +16,65 @@ export interface Project {
   export const projects: Project[] = [
 
     {
+      id: "proj-16",
+      title: "Mars Weather Data Analysis",
+      description: "Analyzed Mars weather data using Python and Pandas. Cleaned and visualized the data to uncover trends and patterns in Martian weather conditions.",
+      color: "rose",
+      tags: ["Python", "Pandas", "Matplotlib"],
+      image: "projects/mars.png",
+
+      links: {
+        github: "https://github.com/PiyushWithPant/Mars-Weather-Data-Analysis",
+
+      }
+    },
+
+    {
+      id: "proj-15",
+      title: "Hospital Travel Accessibility Scorer",
+      description: "Geospatial pipeline to evaluate hospital accessibility in Saarland, Germany. Computes travel times, generates district-level metrics, and visualizes results with interactive maps.",
+      color: "purple",
+      tags: ["Python", "Geopy"],
+      image: "projects/hospital_score.png",
+
+      links: {
+        github: "https://github.com/PiyushWithPant/Hospital-Travel-Accessibility-Score-",
+      }
+    },
+
+    {
+      id: "proj-18",
+      title: "Adversarial Attack on Reward Model of Reinforcement Learning-based Snake Game ",
+      description: "Implemented an adversarial attack on the reward model of a reinforcement learning-based snake game. The attack manipulates the reward signals to mislead the learning agent.",
+      color: "cyan",
+      tags: ["Python", "Pandas", "Matplotlib"],
+      image: "projects/adv_snake.png",
+
+      links: {
+        github: " https://github.com/PiyushWithPant/Adversarial-Attack-on-Reward-System-of-Reinforcement-Learning-based-Snake-Game",
+
+      }
+    },
+
+   
+
+    {
+      id: "proj-14",
+      title: "ToxiLens",
+      description: "A dual-head neural network that detects whether a comment is toxic and identifies the specific toxic categories.",
+      color: "green",
+      tags: ["Python", "NLP"],
+      image: "projects/toxilens.png",
+
+      links: {
+        github: "https://github.com/PiyushWithPant/ToxiLens",
+        demo: "https://toxilens.streamlit.app"
+      }
+    },
+
+
+
+    {
       id: "proj-13",
       title: "IMDB Movie Review Sentiment Analysis",
       description: "A RNN model built using PyTorch to perform sentiment analysis on IMDB movie reviews. The model is trained on a dataset of movie reviews and can classify reviews as positive or negative.",
@@ -29,16 +88,18 @@ export interface Project {
       }
     },
 
+
+
     {
-      id: "proj-12",
-      title: "The Infamous Snake Game",
-      description: "The infamous snake game, that we all played in our Nokia :-)",
+      id: "proj-11",
+      title: "AI for Self-Driving Cars",
+      description: "DQN based AI model to drive a car in a simulator. The model is trained using reinforcement learning and can learn to drive the car by itself.",
       color: "cyan",
-      tags: ["Python", "Pygame"],
-      image: "projects/snake.png",
+      tags: ["Python", "Kvlang", "Shell"],
+      image: "projects/dqn.png",
 
       links: {
-        github: "https://github.com/PiyushWithPant/The-Infamous-Snake-Game"
+        github: "https://github.com/PiyushWithPant/CITYGUIDER-FOR-VLOGGERS"
       }
     },
 
@@ -67,6 +128,33 @@ export interface Project {
       }
     },
     {
+      id: "proj-12",
+      title: "The Infamous Snake Game",
+      description: "The infamous snake game, that we all played in our Nokia :-)",
+      color: "cyan",
+      tags: ["Python", "Pygame"],
+      image: "projects/snake.png",
+
+      links: {
+        github: "https://github.com/PiyushWithPant/The-Infamous-Snake-Game"
+      }
+    },
+    {
+      id: "proj-17",
+      title: "MAIVE",
+      description: "MAIVE Python Package - Mathematics and Artificial Intelligence with Visualization Extended.",
+      color: "rose",
+      tags: ["Python", "Mathematics", "AI"],
+      image: "projects/maive.png",
+
+      links: {
+        github: "https://github.com/PiyushWithPant/MAIVE",
+        demo: "https://piyushwithpant.github.io/MAIVE/"
+
+      }
+    },
+
+    {
       id: "proj-6",
       title: "ScoreKeeper",
       description: "DOM Manipulation project to keep score of a game. It has features like incrementing, decrementing and resetting the score.",
@@ -77,18 +165,7 @@ export interface Project {
         github: "https://github.com/PiyushWithPant/DOM-JavaScript"
       }
     },
-    {
-      id: "proj-11",
-      title: "AI for Self-Driving Cars",
-      description: "DQN based AI model to drive a car in a simulator. The model is trained using reinforcement learning and can learn to drive the car by itself.",
-      color: "rose",
-      tags: ["Python", "Kvlang", "Shell"],
-      image: "projects/dqn.png",
 
-      links: {
-        github: "https://github.com/PiyushWithPant/CITYGUIDER-FOR-VLOGGERS"
-      }
-    },
 
     {
       id: "proj-7",
@@ -105,7 +182,7 @@ export interface Project {
       id: "proj-2",
       title: "NewsApp",
       description: "NewsApp is a react app for daily news with categories & features like infinite scroll, loading bar, etc.",
-      color: "purple",
+      color: "green",
       tags: ["React.js", "JavaScript", "HTML"],
       links: {
         github: "https://github.com/PiyushWithPant/NewsApp-Project-ReactJS"
@@ -155,6 +232,9 @@ export interface Project {
           github: "https://github.com/PiyushWithPant/Meet-your-Pandit-project"
         }
       },
+
+
+
 
 
 
