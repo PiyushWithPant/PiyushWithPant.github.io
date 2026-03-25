@@ -124,9 +124,4 @@ npm run build
 
 
 
-### TODO
-
-1. Make it responsive (better for phones, esp the navbar)
-2. Remove the custom cursor on phone
-
 > By Piyush Pant  ( पियुष पंत )
