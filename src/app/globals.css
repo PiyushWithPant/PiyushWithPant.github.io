@@ -412,6 +412,39 @@ a, .no-underline { text-decoration: none !important; }
 
 
 
+
+
+/* --- SUSTAINABLE IN-TEXT LINK ANIMATION --- */
+.inline-link-plasma {
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  /* This creates a hidden underline that stays with the text flow */
+  background-image: linear-gradient(#00FFFF, #00FFFF);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px; /* Start at 0 width */
+}
+
+.inline-link-plasma:hover {
+  /* The Glow */
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  color: white !important;
+  /* The Underline - now works on multiple lines */
+  background-size: 100% 1px;
+}
+
+/* We remove the ::after block entirely because background-image is better for wrapping text */
+.inline-link-plasma::after {
+  display: none;
+}
+
+
+
+
+
+
+
+
 /*! --------------------------- RESEARCH PAGE --------------------------- */
 
 /* Infinite Header Rotation */

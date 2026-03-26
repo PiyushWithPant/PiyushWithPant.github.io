@@ -91,7 +91,7 @@ export default function AboutPage() {
               </div>
               <div className="narrative-section main-text-highlight">
                 <p className="mb-6">
-                    I come from a small Himalayan village near the <a href="https://g.co/kgs/NukWjwa" target="_blank" className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-white transition-all"><span className="text-brand-cyan">Panchachuli peaks</span></a>  in the <a href="https://www.google.com/search?q=uttarakhand" target="_blank" className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-white transition-all"><span className="text-brand-cyan">Kumaon region of Uttarakhand, India </span></a>. My journey is defined by a leap of faith, leaving my roots to seek new challenges and expand my horizons in the pursuit of professional excellence.
+                    I come from a small Himalayan village near the <a href="https://g.co/kgs/NukWjwa" target="_blank" className="inline-link-plasma"><span className="text-brand-cyan">Panchachuli peaks</span></a>  in the <a href="https://www.google.com/search?q=uttarakhand" target="_blank" className="inline-link-plasma"><span className="text-brand-cyan">Kumaon region of Uttarakhand, India </span></a>. My journey is defined by a leap of faith, leaving my roots to seek new challenges and expand my horizons in the pursuit of professional excellence.
                 </p>
                 
               </div>
