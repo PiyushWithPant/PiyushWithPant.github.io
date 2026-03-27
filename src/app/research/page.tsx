@@ -14,19 +14,19 @@ import Starfield from "@/components/Starfield";
 const researchInterests = [
   {
     title: "Adversarial Machine Learning",
-    desc: "Investigating vulnerabilities in LLMs and Reinforcement Learning agents against intentional perturbations.",
+    desc: "Studying vulnerabilities in RLHF-aligned language models through backdoor attacks, subpopulation targeting, and representation-aware perturbations.",
     icon: <ShieldCheck size={32} />,
     color: "rose"
   },
   {
-    title: "Trustworthy & Safe AI",
-    desc: "Building alignment protocols and safety guardrails to ensure AI systems behave reliably in edge cases.",
+    title: "LLM Safety & Alignment (RLHF)",
+    desc: "Designing and analyzing alignment pipelines (SFT, PPO, DPO) to improve safety, robustness, and reliability of large language models.",
     icon: <Cpu size={32} />,
     color: "cyan"
   },
   {
-    title: "NLP Robustness",
-    desc: "Analyzing the linguistic limits of foundational models and improving their generalization in medical and legal domains.",
+    title: "Mechanistic Interpretability of LLMs",
+    desc: "Understanding internal representations and reasoning circuits in language models to explain failures, backdoors, and emergent behaviors.",
     icon: <Microscope size={32} />,
     color: "purple"
   }
@@ -69,7 +69,7 @@ export default function ResearchPage() {
     <div className="relative min-h-screen w-full overflow-x-hidden">
       <Starfield />
 
-      <div className="max-w-ultra mx-auto px-6 pt-44 pb-40 relative z-10">
+      <div className="max-w-ultra mx-auto px-6 pt-30 pb-40 relative z-10">
         
         <section className="mb-20 group/section">
           <div className="flex items-center gap-6 mb-16">
