@@ -414,28 +414,46 @@ a, .no-underline { text-decoration: none !important; }
 
 
 
-/* --- SUSTAINABLE IN-TEXT LINK ANIMATION --- */
+/* --- SUSTAINABLE IN-TEXT LINK ANIMATION ---*/
+
+
+/* --- MOBILE-FRIENDLY LINK ANIMATION --- */
 .inline-link-plasma {
   text-decoration: none !important;
   transition: all 0.3s ease;
-  /* This creates a hidden underline that stays with the text flow */
-  background-image: linear-gradient(#00FFFF, #00FFFF);
+  background-image: linear-gradient(var(--color-brand-cyan), var(--color-brand-cyan));
   background-position: 0% 100%;
   background-repeat: no-repeat;
-  background-size: 0% 1px; /* Start at 0 width */
+  /* Ensure ::after is disabled globally */
 }
-
-.inline-link-plasma:hover {
-  /* The Glow */
-  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
-  color: white !important;
-  /* The Underline - now works on multiple lines */
-  background-size: 100% 1px;
-}
-
-/* We remove the ::after block entirely because background-image is better for wrapping text */
 .inline-link-plasma::after {
-  display: none;
+  display: none !important;
+}
+
+/* 1. DESKTOP ONLY: High-tech hover effects */
+@media (hover: hover) {
+  .inline-link-plasma {
+    background-size: 0% 1px; /* Line is hidden until hover */
+  }
+  .inline-link-plasma:hover {
+    text-shadow: 0 0 10px var(--color-brand-cyan), 0 0 20px var(--color-brand-cyan);
+    color: white !important;
+    background-size: 100% 1px; /* Line slides out */
+  }
+}
+
+/* 2. MOBILE ONLY: Static clear state (No sticky hover) */
+@media (hover: none) {
+  .inline-link-plasma {
+    background-size: 100% 1px; /* Always underlined so users know it's a link */
+    color: var(--color-brand-cyan) !important;
+    opacity: 0.9;
+  }
+  /* Subtle brightness pop when actually touched */
+  .inline-link-plasma:active {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
 }
 
 
