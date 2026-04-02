@@ -111,30 +111,35 @@ export default function AboutPage() {
                 <Timeline />
               </div>
             </section>
+{/* Section: What I Work On */}
+<section className="group">
+  <div className="flex items-center gap-6 mb-10">
+    <div className="p-3 rounded-full bg-white/5 rotate-icon">
+      <Brain size={32} className="text-emerald-400" />
+    </div>
+    <h2 className="text-4xl font-black text-white tracking-tighter uppercase italic opacity-40 group-hover:opacity-100 transition-opacity">What I Work On</h2>
+  </div>
+  <div className="narrative-section main-text-highlight">
+    <p className="mb-8">
+      I am deeply passionate about advancing AI in a safe, reliable, and impactful direction. My work lies at the intersection of <span className="text-emerald-400 font-medium">Trustworthy AI</span> and <span className="text-emerald-400 font-medium">Adversarial Machine Learning</span>, with a strong focus on modern <span className="text-emerald-400 font-medium">Large Language Models</span> and their alignment.
+    </p>
 
-            {/* Section: What I Work On */}
-          <section className="group">
-              <div className="flex items-center gap-6 mb-10">
-                <div className="p-3 rounded-full bg-white/5 rotate-icon">
-                  <Brain size={32} className="text-emerald-400" />
-                </div>
-                <h2 className="text-4xl font-black text-white tracking-tighter uppercase italic opacity-40 group-hover:opacity-100 transition-opacity">What I Work On</h2>
-              </div>
-              <div className="narrative-section main-text-highlight">
-                <p className="mb-8">
-                    I am deeply passionate about advancing AI in a safe, ethical, and impactful direction. My research interests lie at the intersection of language, learning, and robustness. Lately, I've been drawn to the challenges of building <span className="text-emerald-400 font-medium">Trustworthy AI</span> and <span className="text-emerald-400 font-medium">Adversarial Machine Learning</span>, especially in the context of Large Language Models and Reinforcement Learning.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <WorkFeature text="Exploring the intersection of NLP, RL, and Computer Vision" />
-                    <WorkFeature text="Building safe, reliable, and trustworthy AI systems" />
-                    <WorkFeature text="Studying adversarial attacks and defenses in language models" />
-                    <WorkFeature text="Improving model alignment, robustness, and generalization" />
-                </div>
-                <p className="mt-8 italic text-lg opacity-80">
-                    "I aspire to pursue a PhD and contribute to meaningful research in AI safety and alignment. I enjoy working in collaborative, research-driven environments."
-                </p>
-              </div>
-            </section>
+    <p className="mb-8">
+      Recently, I have been working on understanding how alignment techniques (such as RLHF) can still lead to subtle and targeted failures, especially under distributional shifts or adversarial settings. I am particularly interested in uncovering these weaknesses and using them to improve the robustness and reliability of real-world AI systems.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <WorkFeature text="Studying adversarial attacks and backdoors in language models" />
+      <WorkFeature text="Improving model alignment, robustness, and generalization" />
+      <WorkFeature text="Analyzing failure modes in RLHF-aligned LLMs" />
+      <WorkFeature text="Building evaluation pipelines for LLM behavior under stress" />
+    </div>
+
+    <p className="mt-8 italic text-lg opacity-80">
+      "I aspire to pursue a PhD focused on LLM safety and alignment, and contribute to building AI systems that are not only powerful, but also reliable and trustworthy in real-world settings."
+    </p>
+  </div>
+</section>
 
             {/* Section 4: Beyond the Code */}
             <section className="group pb-40">
