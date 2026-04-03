@@ -839,16 +839,15 @@ body::-webkit-scrollbar {
 /*! ---------------------------  Custom CURSOR --------------------------- */
 /* src/app/globals.css */
 
-@media (min-width: 1024px) {
-  html, body, a, button {
-    cursor: none !important;
-  }
+/* 1. Default: Show standard cursor (for Mobile/Touch) */
+html, body, a, button {
+  cursor: auto !important;
 }
 
-/* Ensure default cursor returns for mobile/touch devices */
-@media (max-width: 1023px) {
+/* 2. Desktop Only: Hide standard cursor if a Mouse is detected */
+@media (pointer: fine) {
   html, body, a, button {
-    cursor: auto !important;
+    cursor: none !important;
   }
 }
 
