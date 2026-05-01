@@ -11,7 +11,7 @@ export const timelineData: TimelineItem[] = [
     year: "Nov 2025 - Present",
     title: "Master's Thesis",
     location: "CISPA, Germany",
-    description: "Research on Stealthy Emotion-Targeted Subpopulation Attacks in RLHF, supervised by Prof. Dr. Xiao Zhang."
+    description: "Master's Thesis: 'Stealthy Emotion-Targeted Subpopulation Attacks in RLHF', supervised by Prof. Dr. Xiao Zhang."
   },
   {
     year: "May 2024 - Nov 2025",
@@ -23,13 +23,13 @@ export const timelineData: TimelineItem[] = [
     year: "2023 - Present",
     title: "M.Sc. Computer Science",
     location: "Saarland University, Germany",
-    description: "Specializing in Artificial Intelligence and Machine Learning, with research focused on RLHF and robustness in large language models."
+    description: "Specializing in Artificial Intelligence and Machine Learning, focused on RLHF, RAG, Fine-tuning and robustness in large language models."
   },
   {
     year: "2020 - 2023",
     title: "Research Assistant",
     location: "School of Computer Science & Engineering, Sandip University, India",
-    description: "First research exposure in the field of AI & ML, worked on both AI & software development projects."
+    description: "Exposure in the field of AI & ML, and AI Research, worked on both AI & software development projects."
   },
   {
     year: "2020 - 2023",

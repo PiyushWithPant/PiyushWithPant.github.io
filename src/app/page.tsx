@@ -123,7 +123,7 @@ export default function Home() {
 
             <motion.div variants={itemVars} className="mb-12" layout>
               <p className="scrolling-text animate-typing-once text-lg sm:text-xl data-stream-hover cursor-default">
-                AI Researcher • Developer • Martial Artist
+                 LLM Engineer & Researcher  {/*• Martial Artist */}
               </p>
             </motion.div>
 

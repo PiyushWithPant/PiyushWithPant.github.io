@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://piyushpant.github.io"), // Replace with your actual domain
   title: {
-    default: "Piyush Pant | AI Researcher and Developer",
+    default: "Piyush Pant | LLM Engineer and Researcher",
     template: "%s | Piyush Pant"
   },
-  description: "Personal portfolio of Piyush Pant. AI Researcher specializing in Adversarial ML, Trustworthy AI, and NLP.",
-  keywords: ["Piyush Pant", "AI Researcher", "Adversarial Machine Learning", "Trustworthy AI", "NLP", "Computer Science", "Safe Reinforcement Learning", "Machine Learning", "Piyush Pant AI", "Piyush Pant Research", "Piyush Pant PhD"],
+  description: "Personal portfolio of Piyush Pant. LLM Engineer and Researcher specializing in Adversarial ML, Trustworthy AI, and NLP.",
+  keywords: ["Piyush Pant", "LLM Engineer", "AI Researcher", "Adversarial Machine Learning", "Trustworthy AI", "NLP", "Computer Science", "Machine Learning", "Piyush Pant AI", "Piyush Pant Research", "Piyush Pant LLM"],
   authors: [{ name: "Piyush Pant" }],
   creator: "Piyush Pant",
   icons: { 
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://piyushpant.github.io",
-    title: "Piyush Pant | AI Researcher and Developer",
-    description: "Researching the future of Safe and Trustworthy AI. Explore my publications and engineering projects.",
+    title: "Piyush Pant | LLM Engineer and Researcher",
+    description: "Building & Evaluating Robust AI Systems. Explore my publications and engineering projects.",
     siteName: "Piyush Pant Portfolio",
     images: [
       {
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Piyush Pant | AI Researcher and Developer",
-    description: "AI Researcher specializing in Adversarial ML and NLP.",
+    title: "Piyush Pant | LLM Engineer and Researcher",
+    description: "LLM Engineer and Researcher specializing in RLHF, RAG & Fine-tuning LLMs.",
     images: ["/og-image.png"],
     // creator: "@your_twitter_handle", 
   },

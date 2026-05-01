@@ -56,7 +56,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <h2 className="text-4xl font-bold tracking-tighter text-white uppercase leading-tight">Piyush Pant</h2>
                   <p className="tagline-text font-mono text-[11px] mt-2">
-                    AI Researcher | Developer | Martial Artist
+                    LLM Engineer & Researcher  {/*• Martial Artist */}
                   </p>
                 </div>
               </div>
@@ -111,6 +111,8 @@ export default function AboutPage() {
                 <Timeline />
               </div>
             </section>
+
+
 {/* Section: What I Work On */}
 <section className="group">
   <div className="flex items-center gap-6 mb-10">
@@ -123,21 +125,36 @@ export default function AboutPage() {
     <p className="mb-8">
       I am deeply passionate about advancing AI in a safe, reliable, and impactful direction. My work lies at the intersection of <span className="text-emerald-400 font-medium">Trustworthy AI</span> and <span className="text-emerald-400 font-medium">Adversarial Machine Learning</span>, with a strong focus on modern <span className="text-emerald-400 font-medium">Large Language Models</span> and their alignment.
     </p>
-
     <p className="mb-8">
-      Recently, I have been working on understanding how alignment techniques (such as RLHF) can still lead to subtle and targeted failures, especially under distributional shifts or adversarial settings. I am particularly interested in uncovering these weaknesses and using them to improve the robustness and reliability of real-world AI systems.
+      I build and evaluate large language model systems with a focus on reliability, safety, and real-world performance. My work combines LLM engineering (fine-tuning, RLHF, RAG) with systematic evaluation to understand how models behave under challenging and adversarial conditions.
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  
+
+     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <WorkFeature text="Designing and deploying LLM pipelines (RLHF, RAG, fine-tuning)" />
+      <WorkFeature text="Building evaluation frameworks for safety, robustness, and utility" />
+      <WorkFeature text="Identifying and stress-testing failure modes in LLM systems" />
+      <WorkFeature text="Improving model generalization under distribution shifts" />
+    </div>
+     <p className="mt-8 italic text-lg opacity-80">
+      I approach AI not just as a modeling problem, but as a systems problem — where evaluation, reliability, and scalability are equally important. I am driven by the goal of building AI systems that are not only powerful, but also trustworthy and beneficial in real-world settings.
+    </p>
+
+    {/* <p className="mb-8">
+      Recently, I have been working on understanding how alignment techniques (such as RLHF) can still lead to subtle and targeted failures, especially under distributional shifts or adversarial settings. I am particularly interested in uncovering these weaknesses and using them to improve the robustness and reliability of real-world AI systems.
+    </p> */}
+
+    {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <WorkFeature text="Studying adversarial attacks and backdoors in language models" />
       <WorkFeature text="Improving model alignment, robustness, and generalization" />
       <WorkFeature text="Analyzing failure modes in RLHF-aligned LLMs" />
       <WorkFeature text="Building evaluation pipelines for LLM behavior under stress" />
-    </div>
+    </div> */}
 
-    <p className="mt-8 italic text-lg opacity-80">
+    {/* <p className="mt-8 italic text-lg opacity-80">
       "I aspire to pursue a PhD focused on LLM safety and alignment, and contribute to building AI systems that are not only powerful, but also reliable and trustworthy in real-world settings."
-    </p>
+    </p> */}
   </div>
 </section>
 

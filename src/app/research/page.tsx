@@ -14,12 +14,12 @@ import Starfield from "@/components/Starfield";
 const researchInterests = [
   {
     title: "Adversarial Machine Learning",
-    desc: "Studying vulnerabilities in RLHF-aligned language models through backdoor attacks, subpopulation targeting, and representation-aware perturbations.",
+    desc: "Studying vulnerabilities in LLMs through backdoor attacks, subpopulation targeting, and representation-aware perturbations.",
     icon: <ShieldCheck size={32} />,
     color: "rose"
   },
   {
-    title: "LLM Safety & Alignment (RLHF)",
+    title: "LLM Alignment & Safety (RLHF)",
     desc: "Designing and analyzing alignment pipelines (SFT, PPO, DPO) to improve safety, robustness, and reliability of large language models.",
     icon: <Cpu size={32} />,
     color: "cyan"
@@ -77,7 +77,7 @@ export default function ResearchPage() {
               <BookOpen size={40} className="text-brand-cyan" />
             </div>
             <h1 className="text-5xl font-black text-white tracking-tighter opacity-80 group-hover/section:opacity-100 transition-opacity">
-              Research Interests
+              Interests
             </h1>
           </div>
 
