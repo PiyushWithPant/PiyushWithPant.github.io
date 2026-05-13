@@ -56,7 +56,7 @@ export default function AboutPage() {
                 <div className="text-center">
                   <h2 className="text-4xl font-bold tracking-tighter text-white uppercase leading-tight">Piyush Pant</h2>
                   <p className="tagline-text font-mono text-[11px] mt-2">
-                    LLM Engineer & Researcher  {/*• Martial Artist */}
+                    AI Engineer • Researcher • Martial Artist
                   </p>
                 </div>
               </div>
@@ -90,8 +90,17 @@ export default function AboutPage() {
                 <h2 className="text-4xl font-black text-white tracking-tighter uppercase italic opacity-40 group-hover:opacity-100 transition-opacity">Who I Am</h2>
               </div>
               <div className="narrative-section main-text-highlight">
+                
                 <p className="mb-6">
                     I come from a small Himalayan village near the <a href="https://g.co/kgs/NukWjwa" target="_blank" className="inline-link-plasma"><span className="text-brand-cyan">Panchachuli peaks</span></a>  in the <a href="https://www.google.com/search?q=uttarakhand" target="_blank" className="inline-link-plasma"><span className="text-brand-cyan">Kumaon region of Uttarakhand, India </span></a>. My journey is defined by a leap of faith, leaving my roots to seek new challenges and expand my horizons in the pursuit of professional excellence.
+                </p>
+
+                <p className="mb-6">
+                  By Profession, I am an AI Engineer specializing in LLM systems, RLHF and RAG. My experience lies in building RLHF pipelines, RAG systems, evaluation pipelines, fine-tuning LLMs, and adversarial testing frameworks using PyTorch, Hugging Face, and LangChain.
+                </p>
+
+                <p className="mb-6">
+                  I enjoy learning new AI technologies, reading research papers, and building AI systems. I believe in building an AI community where everyone, regardless of their background, feels welcome to learn, contribute, and grow.
                 </p>
                 
               </div>
@@ -123,7 +132,7 @@ export default function AboutPage() {
   </div>
   <div className="narrative-section main-text-highlight">
     <p className="mb-8">
-      I am deeply passionate about advancing AI in a safe, reliable, and impactful direction. My work lies at the intersection of <span className="text-emerald-400 font-medium">Trustworthy AI</span> and <span className="text-emerald-400 font-medium">Adversarial Machine Learning</span>, with a strong focus on modern <span className="text-emerald-400 font-medium">Large Language Models</span> and their alignment.
+      I am deeply passionate about advancing AI in a safe, reliable, and impactful direction. My work lies at the intersection of <span className="text-emerald-400 font-medium">Trustworthy AI</span> and <span className="text-emerald-400 font-medium">NLP</span>, with a strong focus on modern <span className="text-emerald-400 font-medium">Large Language Models</span> and their alignment.
     </p>
     <p className="mb-8">
       I build and evaluate large language model systems with a focus on reliability, safety, and real-world performance. My work combines LLM engineering (fine-tuning, RLHF, RAG) with systematic evaluation to understand how models behave under challenging and adversarial conditions.

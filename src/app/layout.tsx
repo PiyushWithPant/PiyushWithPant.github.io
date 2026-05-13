@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://piyushpant.github.io"), // Replace with your actual domain
   title: {
-    default: "Piyush Pant | LLM Engineer and Researcher",
+    default: "Piyush Pant | AI Engineer and Researcher",
     template: "%s | Piyush Pant"
   },
-  description: "Personal portfolio of Piyush Pant. LLM Engineer and Researcher specializing in Adversarial ML, Trustworthy AI, and NLP.",
-  keywords: ["Piyush Pant", "LLM Engineer", "AI Researcher", "Adversarial Machine Learning", "Trustworthy AI", "NLP", "Computer Science", "Machine Learning", "Piyush Pant AI", "Piyush Pant Research", "Piyush Pant LLM"],
+  description: "Personal portfolio of Piyush Pant. AI Engineer and Researcher specializing in Finetuning-LLMs, RAG, RLHF, and Trustworthy AI.",
+  keywords: ["Piyush Pant", "AI Engineer", "AI Researcher", "Adversarial Machine Learning", "Trustworthy AI", "NLP", "Computer Science", "Machine Learning", "Piyush Pant AI", "Piyush Pant Research", "Piyush Pant LLM", "Piyush Pant RLHF", "Piyush Pant RAG", "Piyush Pant Finetuning"],
   authors: [{ name: "Piyush Pant" }],
   creator: "Piyush Pant",
   icons: { 
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://piyushpant.github.io",
-    title: "Piyush Pant | LLM Engineer and Researcher",
+    title: "Piyush Pant | AI Engineer and Researcher",
     description: "Building & Evaluating Robust AI Systems. Explore my publications and engineering projects.",
     siteName: "Piyush Pant Portfolio",
     images: [
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Piyush Pant | LLM Engineer and Researcher",
-    description: "LLM Engineer and Researcher specializing in RLHF, RAG & Fine-tuning LLMs.",
+    title: "Piyush Pant | AI Engineer and Researcher",
+    description: "AI Engineer and Researcher specializing in Finetuning-LLMs, RAG, RLHF, and Trustworthy AI.",
     images: ["/og-image.png"],
     // creator: "@your_twitter_handle", 
   },
