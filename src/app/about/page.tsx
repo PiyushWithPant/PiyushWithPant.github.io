@@ -96,7 +96,7 @@ export default function AboutPage() {
                 </p>
 
                 <p className="mb-6">
-                  By Profession, I am an AI Engineer specializing in LLM systems, RLHF and RAG. My experience lies in building RLHF pipelines, RAG systems, evaluation pipelines, fine-tuning LLMs, and adversarial testing frameworks using PyTorch, Hugging Face, and LangChain.
+                  By Profession, I am an AI Engineer specializing in Agentic AI, LLM systems, RAG and RLHF. My experience lies in building RLHF pipelines, RAG systems, evaluation pipelines, fine-tuning LLMs, and adversarial testing frameworks using PyTorch, Hugging Face, and LangChain.
                 </p>
 
                 <p className="mb-6">
@@ -132,7 +132,7 @@ export default function AboutPage() {
   </div>
   <div className="narrative-section main-text-highlight">
     <p className="mb-8">
-      I am deeply passionate about advancing AI in a safe, reliable, and impactful direction. My work lies at the intersection of <span className="text-emerald-400 font-medium">Trustworthy AI</span> and <span className="text-emerald-400 font-medium">NLP</span>, with a strong focus on modern <span className="text-emerald-400 font-medium">Large Language Models</span> and their alignment.
+      I am deeply passionate about advancing AI in a safe, reliable, and impactful direction. My work lies at the intersection of <span className="text-emerald-400 font-medium">Trustworthy AI</span> and <span className="text-emerald-400 font-medium">LLM Safety</span>, and <span className="text-emerald-400 font-medium">Advanced Knowledge Systems (RAG)</span>.
     </p>
     <p className="mb-8">
       I build and evaluate large language model systems with a focus on reliability, safety, and real-world performance. My work combines LLM engineering (fine-tuning, RLHF, RAG) with systematic evaluation to understand how models behave under challenging and adversarial conditions.
@@ -147,7 +147,7 @@ export default function AboutPage() {
       <WorkFeature text="Improving model generalization under distribution shifts" />
     </div>
      <p className="mt-8 italic text-lg opacity-80">
-      I approach AI not just as a modeling problem, but as a systems problem — where evaluation, reliability, and scalability are equally important. I am driven by the goal of building AI systems that are not only powerful, but also trustworthy and beneficial in real-world settings.
+      I am driven by the goal of building AI systems that are not only powerful, but also trustworthy and beneficial in real-world.
     </p>
 
     {/* <p className="mb-8">

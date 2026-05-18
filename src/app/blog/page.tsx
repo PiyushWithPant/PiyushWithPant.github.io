@@ -1,10 +1,8 @@
-// BLOG PAGE
-
 "use client";
 import React, { useMemo } from 'react';
 import { Bookmark, Calendar, ArrowRight, PenTool } from "lucide-react";
 import Starfield from "@/components/Starfield";
-import { blogPosts } from "@/data/blogs";
+import { blogPosts, BlogPost } from "@/data/blogs";
 import Link from 'next/link';
 
 const hexColorMap = {
@@ -20,6 +18,41 @@ export default function BlogPage() {
   const sortedPosts = useMemo(() => {
     return [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, []);
+
+  // Shared Inner UI Layout to maintain 100% design fidelity without repeating markup
+  const renderCardInner = (post: BlogPost) => (
+    <>
+      {/* Gradient Header */}
+      <div className="h-40 relative overflow-hidden">
+        <div className="blog-gradient-bg absolute inset-0 transition-transform duration-700 group-hover:scale-110" />
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+        <Bookmark className="absolute top-6 left-6 text-white/50 group-hover:text-white transition-colors" size={20} />
+      </div>
+
+      {/* Content */}
+      <div className="p-8 flex flex-col flex-1">
+        {/* Fixed the Tailwind v4 Canonical Warning here */}
+        <div className="flex items-center gap-2 mb-4 text-[10px] font-bold tracking-[0.2em] text-(--blog-accent) uppercase">
+          <Calendar size={12} /> {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        </div>
+        
+        <h3 className="text-2xl font-black text-white mb-4 tracking-tighter leading-tight group-hover:text-white transition-colors">
+          {post.title}
+        </h3>
+        
+        <p className="text-gray-400 text-sm leading-relaxed font-light mb-10 line-clamp-3">
+          {post.excerpt}
+        </p>
+
+        <div className="mt-auto">
+           <div className="blog-read-btn">
+              <span>{post.pdfUrl ? "View PDF" : "Read Entry"}</span>
+              <ArrowRight size={16} />
+           </div>
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
@@ -39,43 +72,38 @@ export default function BlogPage() {
 
         {/* BLOG GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {sortedPosts.map((post) => (
-            <Link 
-              href={`/blogs/${post.slug}`} 
-              key={post.id} 
-              className="blog-card group"
-              style={{ "--blog-accent": hexColorMap[post.color] } as any}
-            >
-              {/* Gradient Header */}
-              <div className="h-40 relative overflow-hidden">
-                <div className="blog-gradient-bg absolute inset-0 transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                <Bookmark className="absolute top-6 left-6 text-white/50 group-hover:text-white transition-colors" size={20} />
-              </div>
+          {sortedPosts.map((post) => {
+            const cardClasses = "blog-card group no-underline flex flex-col cursor-pointer";
+            const inlineStyle = { "--blog-accent": hexColorMap[post.color] } as React.CSSProperties;
 
-              {/* Content */}
-              <div className="p-8 flex flex-col flex-1">
-                <div className="flex items-center gap-2 mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--blog-accent)] uppercase">
-                  <Calendar size={12} /> {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                </div>
-                
-                <h3 className="text-2xl font-black text-white mb-4 uppercase italic tracking-tighter leading-tight group-hover:text-white transition-colors">
-                  {post.title}
-                </h3>
-                
-                <p className="text-gray-400 text-sm leading-relaxed font-light mb-10 line-clamp-3">
-                  {post.excerpt}
-                </p>
+            // Conditional Split: Guarantees 100% type safety for both variants
+            if (post.pdfUrl) {
+              return (
+                <a 
+                  key={post.id}
+                  href={post.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClasses}
+                  style={inlineStyle}
+                >
+                  {renderCardInner(post)}
+                </a>
+              );
+            }
 
-                <div className="mt-auto">
-                   <div className="blog-read-btn">
-                      <span>Read Entry</span>
-                      <ArrowRight size={16} />
-                   </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+            // Standard Markdown Page Route
+            return (
+              <Link 
+                key={post.id}
+                href={`/blogs/${post.slug || ''}`}
+                className={cardClasses}
+                style={inlineStyle}
+              >
+                {renderCardInner(post)}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

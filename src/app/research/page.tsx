@@ -13,14 +13,14 @@ import Starfield from "@/components/Starfield";
 
 const researchInterests = [
   {
-    title: "Adversarial Machine Learning",
+    title: "Trustworthy AI",
     desc: "Studying vulnerabilities in LLMs through backdoor attacks, subpopulation targeting, and representation-aware perturbations.",
     icon: <ShieldCheck size={32} />,
     color: "rose"
   },
   {
-    title: "LLM Alignment & Safety (RLHF)",
-    desc: "Designing and analyzing alignment pipelines (SFT, PPO, DPO) to improve safety, robustness, and reliability of large language models.",
+    title: "LLM Safety & RAG",
+    desc: "Designing and analyzing alignment pipelines (SFT, PPO, DPO) alongside secure RAG frameworks to mitigate hallucinations, prevent knowledge-base exploits, and guarantee LLM reliability.",
     icon: <Cpu size={32} />,
     color: "cyan"
   },

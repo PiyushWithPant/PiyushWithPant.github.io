@@ -29,7 +29,7 @@ export const publications: Publication[] = [
     authors: ["S.K. Dutta", "Yuelin Xu", "Piyush Pant", "Xiao Zhang"],
     thumbnail: "/publications/great.png",  // points to public/
     venue: "arXiv Pre-print | Under Review",
-    date: "2025/10/10",
+    date: "2026/1/10",
     color: "cyan",
     links: {
       arxiv: "https://arxiv.org/abs/2510.09260",

@@ -15,6 +15,20 @@ export interface Project {
   
   export const projects: Project[] = [
 
+      {
+      id: "proj-19",
+      title: "OPT-Align",
+      description: "Engineered an RLHF pipeline implementing SFT and DPO on the OPT-1.3B. This workflow significantly mitigated harmfulness while simultaneously maximizing model helpfulness.",
+      color: "cyan",
+      tags: ["RLHF", "PyTorch", "LLM" ],
+      image: "projects/optalign.png",
+
+      links: {
+        github: "https://github.com/PiyushWithPant/Mars-Weather-Data-Analysis",
+
+      }
+    },
+
     {
       id: "proj-16",
       title: "Mars Weather Data Analysis",
