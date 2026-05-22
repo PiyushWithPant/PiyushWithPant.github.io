@@ -96,7 +96,7 @@ export default function AboutPage() {
                 </p>
 
                 <p className="mb-6">
-                  By Profession, I am an AI Engineer specializing in Agentic AI, LLM systems, RAG and RLHF. My experience lies in building RLHF pipelines, RAG systems, evaluation pipelines, fine-tuning LLMs, and adversarial testing frameworks using PyTorch, Hugging Face, and LangChain.
+                  By Profession, I am an AI Engineer specializing in Agentic AI, LLM systems, RAG and RLHF. My experience lies in building RLHF pipelines, Agentic RAG workflows, LLM evaluation pipelines, fine-tuning LLMs, and adversarial testing frameworks using PyTorch, Hugging Face, and LangChain.
                 </p>
 
                 <p className="mb-6">
