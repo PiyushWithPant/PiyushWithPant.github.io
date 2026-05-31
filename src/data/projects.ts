@@ -15,6 +15,20 @@ export interface Project {
   
   export const projects: Project[] = [
 
+    {
+      id: "proj-20",
+      title: "ScholarGPT",
+      description: "A RAG platform that serves as an intelligent assistant for private research data. Provides zero-data retention, and efficient retrieval of information. Built using LangChain and ChromaDB.",
+      color: "purple",
+      tags: ["RAG", "LangChain", "ChromaDB"],
+      image: "projects/scholargpt.png",
+
+      links: {
+        github: "https://github.com/PiyushWithPant/ScholarGPT/",
+        demo: "https://scholargpt.streamlit.app",
+
+      }
+    },
       {
       id: "proj-19",
       title: "OPT-Align",
