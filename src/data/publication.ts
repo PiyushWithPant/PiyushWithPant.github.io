@@ -173,7 +173,33 @@ export const publications: Publication[] = [
     }
   },
 
-      // {
+      {
+    id: "pub-7",
+    title: "Stealthy Emotion-Targeted Subpopulation Attacks in RLHF",
+    authors: ["Piyush Pant"],
+    venue: "Master's Thesis | Saarland University & CISPA Helmholtz Center for Information Security",
+    date: "2026/07/15",
+    thumbnail: "/publications/thesis.png",  // points to public/
+    color: "purple",
+    links: {
+      // arxiv: "",
+      pdf: "https://piyushwithpant.github.io/The-Thesis-Arc/THESIS.pdf",
+      code: "https://github.com/PiyushWithPant/The-Thesis-Arc",
+      cite: `@mastersthesis{pant2026thesis,
+  author  = {Piyush Pant},
+  title   = {Stealthy Emotion-Targeted Subpopulation Attacks in RLHF},
+  school  = {Saarland University},
+  address = {Saarbrücken, Germany},
+  year    = {2026},
+  month   = jul,
+  type    = {Master's Thesis},
+  url     = {https://piyushwithpant.github.io/The-Thesis-Arc/THESIS.pdf}
+}`,
+    }
+  },
+
+
+        // {
   //   id: "",
   //   title: "",
   //   authors: ["Piyush Pant"],
