@@ -8,14 +8,8 @@ export interface TimelineItem {
 
 export const timelineData: TimelineItem[] = [
   {
-    year: "Nov 2025 - Present",
-    title: "Master's Thesis",
-    location: "CISPA, Germany",
-    description: "Master's Thesis: 'Stealthy Emotion-Targeted Subpopulation Attacks in RLHF', supervised by Prof. Dr. Xiao Zhang."
-  },
-  {
-    year: "May 2024 - Nov 2025",
-    title: "Research Assistant",
+    year: "May 2024 - Aug 2026",
+    title: "Graduate AI Research Assistant",
     location: "CISPA, Germany",
     description: "Deep diving into Adversarial ML and LLM security under Prof. Dr. Xiao Zhang."
   },
