@@ -1,30 +1,28 @@
 export interface BlogPost {
     id: string;
-    slug?: string; // Optional: Only needed for markdown blogs
+    slug?: string; // We will use this to find the .md file (e.g., "whispers-of-the-cosmos")
     title: string;
     date: string;
     excerpt: string;
     color: 'cyan' | 'purple' | 'rose' | 'amber' | 'emerald' | 'blue';
-    content?: string; // Optional: Only needed for markdown blogs
-    pdfUrl?: string; // New Optional Property: Route link to public/pdfs/
+    pdfUrl?: string; 
 }
   
 export const blogPosts: BlogPost[] = [
   {
     id: "rag-deeplearning-notes",
     title: "My Handwritten RAG Notes",
-    excerpt: "A comprehensive compilation of my handwritten notes on Retrieval-Augmented Generation (RAG) from RAG course by DeepLearning.AI.",
+    excerpt: "A comprehensive compilation of my handwritten notes on Retrieval-Augmented Generation (RAG).",
     date: "2026-05-18",
     color: "cyan",
-    pdfUrl: "/blogs/rag-notes-deeplearning-ai-piyush-pant.pdf" // Put this PDF file in your public/pdfs/ directory
+    pdfUrl: "/blogs/rag-notes-deeplearning-ai-piyush-pant.pdf" 
   },
-  // {
-  //   id: "blog-1",
-  //   slug: "adversarial-robustness-foundations",
-  //   title: "An Analysis of Adversarial Robustness in LLMs",
-  //   date: "2026-01-12",
-  //   excerpt: "Diving into modern techniques for analyzing foundational model security boundaries and distribution shifts.",
-  //   color: "amber",
-  //   content: "Full markdown content goes here..."
-  // }
+  {
+    id: "space-reflections-1",
+    slug: "stars-will-disappear-forever", // Must match the .md filename exactly (without the .md)
+    title: "The Stars Will Disappear Forever",
+    date: "2026-07-27",
+    excerpt: "Our view of the universe has an expiration date.",
+    color: "purple"
+  }
 ];

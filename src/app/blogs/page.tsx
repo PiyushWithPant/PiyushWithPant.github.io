@@ -19,20 +19,16 @@ export default function BlogPage() {
     return [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, []);
 
-  // Shared Inner UI Layout to maintain 100% design fidelity without repeating markup
   const renderCardInner = (post: BlogPost) => (
     <>
-      {/* Gradient Header */}
       <div className="h-40 relative overflow-hidden">
         <div className="blog-gradient-bg absolute inset-0 transition-transform duration-700 group-hover:scale-110" />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
         <Bookmark className="absolute top-6 left-6 text-white/50 group-hover:text-white transition-colors" size={20} />
       </div>
 
-      {/* Content */}
       <div className="p-8 flex flex-col flex-1">
-        {/* Fixed the Tailwind v4 Canonical Warning here */}
-        <div className="flex items-center gap-2 mb-4 text-[10px] font-bold tracking-[0.2em] text-(--blog-accent) uppercase">
+        <div className="flex items-center gap-2 mb-4 text-[10px] font-bold tracking-[0.2em] text-[var(--blog-accent)] uppercase">
           <Calendar size={12} /> {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
         </div>
         
@@ -59,8 +55,6 @@ export default function BlogPage() {
       <Starfield />
 
       <div className="max-w-ultra mx-auto px-6 pt-44 pb-40 relative z-10">
-        
-        {/* HEADER */}
         <div className="flex items-center gap-6 mb-20 group/section">
           <div className="p-4 bg-white/5 rounded-2xl border border-white/10 section-header-icon">
             <PenTool size={40} className="text-brand-cyan" />
@@ -70,36 +64,21 @@ export default function BlogPage() {
           </h1>
         </div>
 
-        {/* BLOG GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {sortedPosts.map((post) => {
             const cardClasses = "blog-card group no-underline flex flex-col cursor-pointer";
-            const inlineStyle = { "--blog-accent": hexColorMap[post.color] } as React.CSSProperties;
+            const inlineStyle = { "--blog-accent": hexColorMap[post.color || 'cyan'] } as React.CSSProperties;
 
-            // Conditional Split: Guarantees 100% type safety for both variants
             if (post.pdfUrl) {
               return (
-                <a 
-                  key={post.id}
-                  href={post.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cardClasses}
-                  style={inlineStyle}
-                >
+                <a key={post.id} href={post.pdfUrl} target="_blank" rel="noopener noreferrer" className={cardClasses} style={inlineStyle}>
                   {renderCardInner(post)}
                 </a>
               );
             }
 
-            // Standard Markdown Page Route
             return (
-              <Link 
-                key={post.id}
-                href={`/blogs/${post.slug || ''}`}
-                className={cardClasses}
-                style={inlineStyle}
-              >
+              <Link key={post.id} href={`/blogs/${post.slug || ''}`} className={cardClasses} style={inlineStyle}>
                 {renderCardInner(post)}
               </Link>
             );
