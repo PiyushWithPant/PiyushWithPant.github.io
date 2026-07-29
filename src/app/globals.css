@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+@import 'katex/dist/katex.min.css';
+
+
 @theme {
   /* Updated to match your starfield background exactly */
   --color-brand-dark: #0f0f16; 

@@ -86,7 +86,7 @@ function SearchResults() {
               </h2>
               <div className="flex flex-col gap-3">
                 {results.blogs.map((item, idx) => (
-                  <SearchResultCard key={`blog-${idx}`} item={item} href="/blog" color="rose" />
+                  <SearchResultCard key={`blog-${idx}`} item={item} href="/blogs" color="rose" />
                 ))}
               </div>
             </div>

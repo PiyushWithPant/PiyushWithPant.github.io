@@ -1,5 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import { Calendar, ArrowLeft, User } from 'lucide-react';
 import Link from 'next/link';
 import Starfield from '@/components/Starfield';
@@ -126,7 +128,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                           [&>strong]:text-white [&>strong]:font-bold [&>strong]:drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]
                           
                           [&_a]:text-[var(--accent)] [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-[var(--accent)]/40 hover:[&_a]:decoration-[var(--accent)] hover:[&_a]:drop-shadow-[0_0_12px_var(--accent)] [&_a]:transition-all">
-            <ReactMarkdown>
+            <ReactMarkdown
+  remarkPlugins={[remarkMath]}
+  rehypePlugins={[rehypeKatex]}
+>
+
               {markdownContent}
             </ReactMarkdown>
           </div>
