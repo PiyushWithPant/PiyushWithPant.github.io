@@ -197,6 +197,14 @@ export default function AboutPage() {
                         I often find myself dwelling in the domain of Spirituality. I enjoy reading and discussing about the ancient wisdom of the <span className="text-rose-400 italic">Vedas, Yoga, and Bhagavad Gita</span>. 
                       </span>
                     </p>
+
+                    <p className="flex items-start gap-6 group-hover:text-white transition-all duration-500">
+                      <ChevronRight size={28} className="text-rose-400 mt-1 shrink-0" />
+                      <span>
+                        
+                        Hearing these two words fires me up: <span className="text-rose-400 italic">Universe</span> and <span className="text-rose-400 italic">Dinosaurs</span>. I'd love for you to join me in exploring the mysteries of the cosmos and the ancient creatures that once roamed our planet. I am no expert but check out my <a href="/blogs" className="inline-link-plasma"><span className="text-rose-400">thoughts</span></a>, and if you have an interesting idea or perspective, I'd love to hear it and include it in the blog post!
+                      </span>
+                    </p>
                     
                     
                  </div>
