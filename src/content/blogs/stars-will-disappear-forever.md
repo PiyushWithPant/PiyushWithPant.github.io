@@ -35,9 +35,13 @@ As you read these lines, space, THE space, is expanding. I mean literally increa
 Gravity is the local gangster of the neighbourhood. Scientifically, it is much stronger locally and dominates the effects of the expansion, and that is why all your belongings are exactly where they are and why earth is exactly the same distance away from the sun as it was 100 years ago. The problem comes when things are too far away from each other in the (maybe infinite) space, this makes the local gangster loose the war and the expansion starts to dominate. but how does this expansion affects us? doesn't seem that scary? and it might not be, but the problem is - It is not alone!
 
 
-
-
 ### (Accelerated) Expansion of the Space 
+
+The rate of cosmic expansion is not constant. The universe is not expanding at the same speed today as it was one year or one million years ago; instead, the expansion rate is dynamically changing. Crucially, the velocity of this expansion is actively accelerating, driven by an elusive force known as dark energy.
+
+
+
+
 
 
 *if a new life emerges, they can see only the curretn area and never know that there exist other galaxies! they will not even know about universe ! maybe thats what happened to us! that our observable universe is just a small galaxy and others are so far away!*
