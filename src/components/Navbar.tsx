@@ -15,6 +15,7 @@ const Navbar = () => {
   const router = useRouter();
   const isHome = pathname === "/";
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { name: "About Me", href: "/about" },
@@ -37,6 +38,19 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Changes to true when you scroll down more than 20 pixels
+      setIsScrolled(window.scrollY > 20);
+    };
+    
+    // Check on initial load
+    handleScroll();
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -48,12 +62,19 @@ const Navbar = () => {
   };
 
   return (
+    // <nav 
+    //   className={`fixed top-0 w-full z-60 transition-all duration-500 ${
+    //     isHome && !isOpen
+    //       ? "bg-transparent border-transparent" 
+    //       : "bg-brand-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/20"
+    //   }${isOpen ? "h-auto pb-10" : "h-20"}`}
+    // >
     <nav 
       className={`fixed top-0 w-full z-60 transition-all duration-500 ${
-        isHome && !isOpen
+        !isScrolled && !isOpen
           ? "bg-transparent border-transparent" 
           : "bg-brand-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/20"
-      }${isOpen ? "h-auto pb-10" : "h-20"}`}
+      } ${isOpen ? "h-auto pb-10" : "h-20"}`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between h-20">
