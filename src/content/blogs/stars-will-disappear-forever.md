@@ -126,8 +126,8 @@ Finally, I will ask you a question, after reading my thoughts-
 
 
 
-<quote>
-With curiosity,  
+```
 
-**Piyush Pant**
-</quote>
+With curiosity,  
+Piyush Pant
+```

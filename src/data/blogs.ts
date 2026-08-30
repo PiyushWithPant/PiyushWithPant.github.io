@@ -24,5 +24,13 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-27",
     excerpt: "Our view of the universe has an expiration date.",
     color: "purple"
+  },
+  {
+    id: "superpower-1",
+    slug: "the-superpower-id-ask-for", // Must match the .md filename exactly (without the .md)
+    title: "The Superpower I'd Ask For",
+    date: "2026-09-01",
+    excerpt: "Before you read this, ask yourself the same question: what superpower would you ask for?",
+    color: "rose"
   }
 ];
