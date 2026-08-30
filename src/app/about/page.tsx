@@ -65,7 +65,7 @@ export default function AboutPage() {
               <div className="flex flex-col gap-4 pl-2 w-full max-w-[280px]">
                  <SidebarLink icon={<FaMapMarkerAlt />} text="Saarbrücken, Germany" link="https://g.co/kgs/VJt4AyM" />
                  <SidebarLink icon={<FaUniversity />} text="Universität des Saarlandes" link="https://www.uni-saarland.de/en/home.html" />
-                 <SidebarLink icon={<FaBuilding />} text="CISPA Helmholtz Center" link="https://cispa.de/en" />
+                 <SidebarLink icon={<FaBuilding />} text="AUDI AG" link="https://www.audi.de/de/" />
                  <SidebarLink icon={<FaEnvelope />} text="piyushpant15@gmail.com" link="mailto:piyushpant15@gmail.com" />
                  <SidebarLink icon={<FaGithub />} text="PiyushWithPant | GitHub" link="https://github.com/PiyushWithPant" />
                  <SidebarLink icon={<FaLinkedin />} text="LinkedIn Profile" link="https://linkedin.com/in/piyush-pant" />

@@ -28,7 +28,7 @@ export const publications: Publication[] = [
     title: "GREAT: Generalizable Backdoor Attacks in RLHF via Emotion-Aware Trigger Synthesis",
     authors: ["S.K. Dutta", "Yuelin Xu", "Piyush Pant", "Xiao Zhang"],
     thumbnail: "/publications/great.png",  // points to public/
-    venue: "arXiv Pre-print | Under Review",
+    venue: "EMNLP 2026",
     date: "2026/1/10",
     color: "cyan",
     links: {

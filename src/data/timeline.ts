@@ -8,6 +8,12 @@ export interface TimelineItem {
 
 export const timelineData: TimelineItem[] = [
   {
+  year: "Sep 2026 - Present",
+  title: "AI Engineering Intern",
+  location: "AUDI AG, Germany",
+  description: "Exploring and developing advanced AI solutions around LLMs and knowledge-driven systems."
+  },
+  {
     year: "May 2024 - Aug 2026",
     title: "Graduate AI Research Assistant",
     location: "CISPA, Germany",
